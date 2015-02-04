@@ -20,3 +20,4 @@ UI walkthrough:
 	15.	submit_success
 	16.	draw_another
 	17.	finished
+	18.	polygon_delete
