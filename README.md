@@ -19,5 +19,8 @@ UI walkthrough:
 	14.	polygon_submit
 	15.	submit_success
 	16.	draw_another
-	17.	finished
-	18.	polygon_delete
+	17. draw_anohter2
+	18. draw_another3
+	19. expand_list
+	20.	finished
+	21.	polygon_delete
