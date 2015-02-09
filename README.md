@@ -15,9 +15,7 @@ UI walkthrough:
 10. polygon_complete
 
 ### Naming a polygon
-11. polygon_clear
 12. polygon_name
-13. polygon_name_cancel
 14. polygon_submit
 15. submit_success
 
@@ -26,6 +24,5 @@ UI walkthrough:
 17. draw_anohter2
 18. draw_another3
 19. expand_list
-20. finished
 21. polygon_delete
 22. about
