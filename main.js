@@ -1,7 +1,8 @@
 var map,
 	user,
 	drawn,
-	drawing;
+	drawing,
+	endpoint = 'http://localhost:3000/add';
 
 function init(){
 	check_cookie();
@@ -34,12 +35,10 @@ function init_events(){
 	});
 	
 	$( 'form' ).submit( function( e ){
-        var $form = $( this );
- 
         $.ajax({
-            type: $form.attr( 'method' ),
-            url: $form.attr( 'action' ),
-            data: $form.serialize(),
+            type : "POST",
+            url : endpoint,
+            data : $( this ).serialize(),
  
             success: function(data, status) {
                 console.log( data );
