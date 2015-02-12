@@ -1,24 +1,6 @@
 {
   "name": "bcworkshop-collect",
   "version": "0.1",
-  "homepage": "https://github.com/axismaps/bcworkshop-collect",
-  "authors": [
-    "David Heyman <dave@axismaps.com>"
-  ],
-  "description": "Neighborhood crowd-sourcing tool",
-  "main": "index.html",
-  "moduleType": [
-    "node"
-  ],
-  "license": "MIT",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
   "dependencies": {
     "Leaflet.draw": "https://github.com/tablackmore/Leaflet.draw.git#touch",
     "bootstrap": "~3.3.2",
