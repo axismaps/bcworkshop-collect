@@ -9,7 +9,7 @@ bower install
 ```
 
 ## tiles.js
-To add your own tiles to the map, create a file called tiles.js with the contents:
+The bcWorkshop map uses Mapbox tiles. To add your own tiles to the map, create a file called tiles.js with the contents:
 ```
 var tileAddress = 'https://{s}.<tile-server>/{z}/{x}/{y}.png?<parameters>';
 ```
