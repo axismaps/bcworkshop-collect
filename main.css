@@ -29,6 +29,31 @@ header, #map{
 	display: none;
 }
 
+.twitter-typeahead, .tt-dropdown-menu{
+	width: 100%;
+}
+
+.tt-dropdown-menu{
+	margin-top: -15px;
+	background-color: white;
+	border: 1px solid #999;
+	box-shadow: 0 0 4.8px 0.3px rgba(0, 0, 0, 0.25);
+}
+
+.tt-suggestion {
+    padding: 0 20px;
+    line-height: 50px;
+    border-bottom: 1px solid #999;
+}
+
+.tt-suggestion.tt-cursor{
+    background-color: #eee;
+}
+
+.tt-suggestion p{
+	margin: 0;
+}
+
 #name-input{
 	margin-bottom: 15px;
 }
@@ -91,7 +116,7 @@ span.big-icon{
 	font-size: 36px;
 }
 
-#name p{
+.ajax > p{
 	text-align: center;
 }
 

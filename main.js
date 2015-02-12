@@ -8,6 +8,7 @@ function init(){
 	check_cookie();
 	init_map();
 	init_events();
+	init_names();
 	resize();
 }
 
@@ -69,6 +70,28 @@ function init_events(){
 		map.zoomIn();
 		if( map.getZoom() + 1 >= map.getMaxZoom() ) $( "#zoom-in" ).addClass( "disabled" );
 		$( "#zoom-out" ).removeClass( "disabled" );
+	});
+}
+
+function init_names() {
+	var names = new Bloodhound({
+		datumTokenizer : Bloodhound.tokenizers.obj.whitespace( 'name' ),
+		queryTokenizer : Bloodhound.tokenizers.whitespace,
+		limit : 4,
+		prefetch : {
+			url : endpoint + '/names',
+			filter : function( list ) {
+				return $.map( list, function( neighborhood ){ return { name : neighborhood }; });
+    			}
+		}
+	});
+	
+	names.initialize();
+	
+	$( '#name-input' ).typeahead(null, {
+		name : 'neighborhoods',
+		displayKey : 'name',
+		source : names.ttAdapter()
 	});
 }
 
