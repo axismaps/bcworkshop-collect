@@ -6,12 +6,6 @@ Community mapping tools and services
 Install dependencies
 ```
 bower install
-npm install
-```
-
-Build using gulp
-```
-gulp
 ```
 
 ## Client Functions
