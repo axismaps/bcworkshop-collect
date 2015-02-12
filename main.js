@@ -39,6 +39,12 @@ function init_events(){
 		return false;
 	});
 	
+	$( "#poly" ).click( draw_polygon );
+	$( "#circle" ).click( function() {
+		console.log( "CIC" );
+		draw_circle()
+	});
+	
 	$( 'form' ).submit( function( e ){
 		$( this ).hide();
 		$( "#name .modal-header" ).hide();
@@ -111,16 +117,15 @@ function check_cookie(){
 }
 
 function draw_polygon(){
-	clear_drawing();
-	drawing = new L.Draw.PolygonTouch( map ).enable();
+	if( drawing ) drawing.disable();
+	drawing = new L.Draw.PolygonTouch( map );
+	drawing.enable();
 }
 
 function draw_circle(){
-	
-}
-
-function clear_drawing(){
-	
+	if( drawing ) drawing.disable();
+	drawing = new L.Draw.Circle( map );
+	drawing.enable();
 }
 
 function finish_draw( e ){
