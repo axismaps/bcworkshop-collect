@@ -29,6 +29,54 @@ header, #map{
 	display: none;
 }
 
+#name-input{
+	margin-bottom: 15px;
+}
+
+#name input[ type="radio" ]{
+	margin-right: 123px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#name input[ type="radio" ]:last-child{
+	margin-right: 0;
+}
+
+#confidence-label{
+	margin-top: -12px;
+	padding-top: 15px;
+	border-top: 6px solid #999;
+	font-weight: bold;
+}
+
+#confidence-label span{
+	display: block;
+	text-align: center;
+}
+
+#confidence-label .left{
+	float: left;
+	text-align: left;
+}
+
+#confidence-label .right{
+	float: right;
+	text-align: right;
+}
+
+#name a{
+	margin-left: 15px;
+	color: #999;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#name a:hover{
+	color: #333;
+}
+
 /* BOOTSTRAP OVERRIDES */
 .btn{
 	line-height: 26px;
@@ -48,4 +96,12 @@ header, #map{
 
 .modal-header, .modal-footer{
 	border: none;
+}
+
+.form-control{
+	background-color: #eee;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }

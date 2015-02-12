@@ -45,25 +45,24 @@
 					<div class="modal-body">
 						<form>
 							<div class="form-group">
-								<input type="text" class="form-control input-lg" name="name" placeholder="Neighborhood name...">
+								<input id="name-input" type="text" class="form-control input-lg" name="name" placeholder="Neighborhood name...">
 								<textarea class="form-control" rows="4" placeholder="Tell us why you chose these boundaries..."></textarea>
-								<label class="radio-inline">
-									<input type="radio" name="confidence" value="1"> 1
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="confidence" value="2"> 2
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="confidence" value="3"> 3
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="confidence" value="4"> 4
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="confidence" value="5"> 5
-								</label>
+								<div>
+									<h5>How confident are you in your choice?</h5>
+									<input type="radio" name="confidence" value="1">
+									<input type="radio" name="confidence" value="2">
+									<input type="radio" name="confidence" value="3">
+									<input type="radio" name="confidence" value="4">
+									<input type="radio" name="confidence" value="5">
+								</div>
+								<div id="confidence-label">
+									<span class="left">Not<br />Confident</span>
+									<span class="right">Very<br />Confident</span>
+									<span>Somewhat<br />Confident</span>
+								</div>
 								<input type="hidden" id="uuid" name="uuid">
 								<input type="hidden" id="geojson" name="geojson">
+								<hr />
 								<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-cloud-upload"></span> Submit</button>
 								<a data-dismiss="modal">Close</a>
 							</div>
