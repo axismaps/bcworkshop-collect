@@ -1,6 +1,19 @@
 # bc-workshop
 Community mapping tools and services
 
+## Installation Instructions
+
+Install dependencies
+```
+bower install
+npm install
+```
+
+Build using gulp
+```
+gulp
+```
+
 ## Client Functions
 
 ### init
