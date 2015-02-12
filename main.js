@@ -13,7 +13,11 @@ function init(){
 
 function init_map(){
 	//Initializing map and tile layer
-	map = L.map( 'map', { zoomControl: false, minZoom : 9 } ).setView( [ 32.78, -96.8 ], 12 );
+	map = L.map( 'map', { 
+		zoomControl: false,
+		minZoom : 10,
+		maxBounds : [ [ 32.5, -96.55 ], [ 33.05, -97.05 ] ]
+	}).setView( [ 32.78, -96.8 ], 12 );
 	L.tileLayer( tileAddress ).addTo( map );
 	
 	//Setting up drawing
