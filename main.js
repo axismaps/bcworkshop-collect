@@ -31,28 +31,14 @@ function init_events(){
 	
 	$( "#zoom-out" ).click( function() {
 		map.zoomOut();
-		checkZoom();
+		if( map.getZoom() - 1 <= map.getMinZoom() ) $( "#zoom-out" ).addClass( "disabled" );
+		$( "#zoom-in" ).removeClass( "disabled" );
 	});
 	$( "#zoom-in" ).click( function() {
 		map.zoomIn();
-		checkZoom();
+		if( map.getZoom() + 1 >= map.getMaxZoom() ) $( "#zoom-in" ).addClass( "disabled" );
+		$( "#zoom-out" ).removeClass( "disabled" );
 	});
-	
-	function checkZoom() {
-		if( map.getZoom() + 1 >= map.getMaxZoom() ) {
-			$( "#zoom-in" ).addClass( "disabled" );
-		}
-		else {
-			$( "#zoom-in" ).removeClass( "disabled" );
-		}
-		
-		if( map.getZoom() - 1 <= map.getMinZoom() ) {
-			$( "#zoom-out" ).addClass( "disabled" );
-		}
-		else {
-			$( "#zoom-out" ).removeClass( "disabled" );
-		}
-	}
 }
 
 function resize() {
