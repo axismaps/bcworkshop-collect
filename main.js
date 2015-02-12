@@ -2,7 +2,7 @@ var map,
 	user,
 	drawn,
 	drawing,
-	endpoint = window.location.origin + ':3000/add';
+	endpoint = window.location.origin + ':3000';
 
 function init(){
 	check_cookie();
@@ -47,7 +47,7 @@ function init_events(){
 		
         $.ajax({
             type : "POST",
-            url : endpoint,
+            url : endpoint + '/add',
             data : $( this ).serialize(),
  
             success: function( data, status ) {
