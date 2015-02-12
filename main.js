@@ -91,7 +91,7 @@ function clear_drawing(){
 function finish_draw( e ){
 	drawing = e.layer;
 	map.addLayer( drawing );
-	$( "#geojson" ).val( JSON.stringify( drawing.toGeoJSON() ) );
+	$( "#geojson" ).val( JSON.stringify( drawing.toGeoJSON().geometry ) );
 	$( "#uuid" ).val( user );
 	$( '#name' ).modal();
 }
