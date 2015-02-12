@@ -1,0 +1,11 @@
+header{
+	height: 140px;
+}
+
+header img{
+	margin: 25px 30px;
+}
+
+header, #map{
+	width: 100%;
+}
