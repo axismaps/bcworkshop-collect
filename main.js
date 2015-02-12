@@ -92,7 +92,7 @@ function finish_draw( e ){
 	drawing = e.layer;
 	map.addLayer( drawing );
 	$( "#geojson" ).val( JSON.stringify( drawing.toGeoJSON() ) );
-	$( "#user-id" ).val( user );
+	$( "#uuid" ).val( user );
 	$( '#name' ).modal();
 }
 

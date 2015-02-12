@@ -45,7 +45,7 @@
 					<div class="modal-body">
 						<form>
 							<div class="form-group">
-								<input type="text" class="form-control input-lg" placeholder="Neighborhood name...">
+								<input type="text" class="form-control input-lg" name="name" placeholder="Neighborhood name...">
 								<textarea class="form-control" rows="4" placeholder="Tell us why you chose these boundaries..."></textarea>
 								<label class="radio-inline">
 									<input type="radio" name="confidence" value="1"> 1
@@ -62,7 +62,7 @@
 								<label class="radio-inline">
 									<input type="radio" name="confidence" value="5"> 5
 								</label>
-								<input type="hidden" id="user-id" name="user-id">
+								<input type="hidden" id="uuid" name="uuid">
 								<input type="hidden" id="geojson" name="geojson">
 								<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-cloud-upload"></span> Submit</button>
 								<a data-dismiss="modal">Close</a>
