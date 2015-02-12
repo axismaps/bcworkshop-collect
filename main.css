@@ -45,3 +45,7 @@ header, #map{
 .btn-primary:hover{
 	background-color: #df3330;
 }
+
+.modal-header, .modal-footer{
+	border: none;
+}

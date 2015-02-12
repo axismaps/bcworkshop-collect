@@ -1,15 +1,16 @@
 var map,
 	user,
-	drawn;
+	drawn,
+	drawing;
 
-function init() {
+function init(){
 	check_cookie();
 	init_map();
 	init_events();
 	resize();
 }
 
-function init_map() {
+function init_map(){
 	//Initializing map and tile layer
 	map = L.map( 'map', { zoomControl: false, minZoom : 9 } ).setView( [ 32.78, -96.8 ], 12 );
 	L.tileLayer( tileAddress ).addTo( map );
@@ -17,19 +18,38 @@ function init_map() {
 	//Setting up drawing
 	drawn = new L.FeatureGroup();
 	map.addLayer( drawn );
+	
+	map.on( 'draw:created', finish_draw );
 }
 
 function init_events(){
-	$( "#draw-call" ).click( function() {
+	$( "#draw-call" ).click( function(){
 		$( this ).animate( { opacity : 0 }, 'fast', function() {
 			$( "#drawing" ).show();
+			draw_polygon();
 			$( this ).hide();
 		});
 		
 		return false;
 	});
 	
-	$( "#zoom-out" ).click( function() {
+	$( 'form' ).submit( function( e ){
+        var $form = $( this );
+ 
+        $.ajax({
+            type: $form.attr( 'method' ),
+            url: $form.attr( 'action' ),
+            data: $form.serialize(),
+ 
+            success: function(data, status) {
+                console.log( data );
+            }
+        });
+ 
+        e.preventDefault();
+    });
+	
+	$( "#zoom-out" ).click( function(){
 		map.zoomOut();
 		if( map.getZoom() - 1 <= map.getMinZoom() ) $( "#zoom-out" ).addClass( "disabled" );
 		$( "#zoom-in" ).removeClass( "disabled" );
@@ -41,12 +61,12 @@ function init_events(){
 	});
 }
 
-function resize() {
+function resize(){
 	$( "#map" ).height( $( window ).height() - 140 );
 	map.invalidateSize();
 }
 
-function check_cookie() {
+function check_cookie(){
 	if( $.cookie( 'bcworkshop-collect' ) ) {
 		user = $.cookie( 'bcworkshop-collect' );
 	}
@@ -54,6 +74,27 @@ function check_cookie() {
 		user = uuid.v1();
 		$.cookie( 'bcworkshop-collect', user, { path: '/' } );
 	}
+}
+
+function draw_polygon(){
+	clear_drawing();
+	drawing = new L.Draw.PolygonTouch( map ).enable();
+}
+
+function draw_circle(){
+	
+}
+
+function clear_drawing(){
+	
+}
+
+function finish_draw( e ){
+	drawing = e.layer;
+	map.addLayer( drawing );
+	$( "#geojson" ).val( JSON.stringify( drawing.toGeoJSON() ) );
+	$( "#user-id" ).val( user );
+	$( '#name' ).modal();
 }
 
 init();

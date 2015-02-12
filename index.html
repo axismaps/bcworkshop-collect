@@ -36,6 +36,43 @@
 			</div>
 		</div>
 		
+		<div class="modal fade" id="name" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Name this neighborhood</h4>
+					</div>
+					<div class="modal-body">
+						<form action="/add" method="POST">
+							<div class="form-group">
+								<input type="text" class="form-control input-lg" placeholder="Neighborhood name...">
+								<textarea class="form-control" rows="4" placeholder="Tell us why you chose these boundaries..."></textarea>
+								<label class="radio-inline">
+									<input type="radio" name="confidence" value="1"> 1
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="confidence" value="2"> 2
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="confidence" value="3"> 3
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="confidence" value="4"> 4
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="confidence" value="5"> 5
+								</label>
+								<input type="hidden" id="user-id">
+								<input type="hidden" id="geojson">
+								<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-cloud-upload"></span> Submit</button>
+								<a data-dismiss="modal">Close</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="bower_components/jquery-cookie/jquery.cookie.js"></script>
