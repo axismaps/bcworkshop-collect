@@ -4,6 +4,8 @@
   "dependencies": {
     "Leaflet.draw": "https://github.com/tablackmore/Leaflet.draw.git#touch",
     "bootstrap": "~3.3.2",
-    "leaflet": "~0.7.3"
+    "leaflet": "~0.7.3",
+    "jquery-cookie": "~1.4.1",
+    "node-uuid": "~1.4.2"
   }
 }
