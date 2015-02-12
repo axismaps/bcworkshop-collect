@@ -12,6 +12,7 @@ header, #map{
 
 #controls{
 	position: absolute;
+	width: 100%;
 	top: 160px;
 	left: 20px;
 }
@@ -33,7 +34,7 @@ header, #map{
 	line-height: 26px;
 }
 
-.btn.disabled {
+#drawing .btn.disabled {
 	opacity: 1;
 }
 
