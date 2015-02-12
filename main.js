@@ -129,10 +129,15 @@ function draw_circle(){
 }
 
 function finish_draw( e ){
-	drawing = e.layer;
-	map.addLayer( drawing );
-	
-	var geojson = JSON.stringify( drawing.toGeoJSON().geometry ).replace(/\}$/gim, ",\"crs\":{\"type\":\"name\",\"properties\":{\"name\":\"EPSG:4326\"}}}" );
+	if( e.layerType == "circle" ) {
+		var pt = e.layer.toGeoJSON();
+		var buffer = turf.buffer( pt, e.layer.getRadius(), "meters" );
+		var geom = buffer.features[ 0 ].geometry;
+	}
+	else {
+		var geom = e.layer.toGeoJSON().geometry;
+	}
+	var geojson = JSON.stringify( geom ).replace(/\}$/gim, ",\"crs\":{\"type\":\"name\",\"properties\":{\"name\":\"EPSG:4326\"}}}" );
 	$( "#geojson" ).val( geojson );
 	$( "#uuid" ).val( user );
 	$( '#name' ).modal();
