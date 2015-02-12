@@ -2,7 +2,7 @@ var map,
 	user,
 	drawn,
 	drawing,
-	endpoint = 'http://localhost:3000/add';
+	endpoint = window.location.origin + ':3000/add';
 
 function init(){
 	check_cookie();
