@@ -77,6 +77,24 @@ header, #map{
 	color: #333;
 }
 
+#ajax-loading, #ajax-success{
+	display: none;
+	padding: 75px 0;
+}
+
+#ajax-success{
+	padding-bottom: 0;
+}
+
+span.big-icon{
+	color: #2db143;
+	font-size: 36px;
+}
+
+#name p{
+	text-align: center;
+}
+
 /* BOOTSTRAP OVERRIDES */
 .btn{
 	line-height: 26px;

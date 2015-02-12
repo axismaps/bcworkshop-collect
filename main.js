@@ -39,13 +39,21 @@ function init_events(){
 	});
 	
 	$( 'form' ).submit( function( e ){
+		$( this ).hide();
+		$( "#name .modal-header" ).hide();
+		
+		$( "#ajax-loading b" ).text( $( "#name-input" ).val() );
+		$( "#ajax-loading" ).show();
+		
         $.ajax({
             type : "POST",
             url : endpoint,
             data : $( this ).serialize(),
  
-            success: function(data, status) {
-                console.log( data );
+            success: function( data, status ) {
+                $( "#ajax-loading" ).hide();
+                $( "#ajax-success b").text( data );
+                $( "#ajax-success" ).show();
             }
         });
  
