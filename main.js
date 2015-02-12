@@ -91,7 +91,9 @@ function clear_drawing(){
 function finish_draw( e ){
 	drawing = e.layer;
 	map.addLayer( drawing );
-	$( "#geojson" ).val( JSON.stringify( drawing.toGeoJSON().geometry ) );
+	
+	var geojson = JSON.stringify( drawing.toGeoJSON().geometry ).replace(/\}$/gim, ",\"crs\":{\"type\":\"name\",\"properties\":{\"name\":\"EPSG:4326\"}}}" );
+	$( "#geojson" ).val( geojson );
 	$( "#uuid" ).val( user );
 	$( '#name' ).modal();
 }
