@@ -9,3 +9,38 @@ header img{
 header, #map{
 	width: 100%;
 }
+
+#controls{
+	position: absolute;
+	top: 160px;
+	left: 20px;
+}
+
+.btn-group + .btn-group, .btn + .btn-group{
+	margin-left: 10px;
+}
+
+#zoom{
+	color: #666;
+}
+
+#drawing{
+	display: none;
+}
+
+/* BOOTSTRAP OVERRIDES */
+.btn{
+	line-height: 26px;
+}
+
+.btn.disabled {
+	opacity: 1;
+}
+
+.btn-primary{
+	background-color: #ee2a25;
+}
+
+.btn-primary:hover{
+	background-color: #df3330;
+}
