@@ -13,11 +13,17 @@ header, #map{
 #controls{
 	position: absolute;
 	width: 100%;
-	top: 160px;
+	top: 150px;
 	left: 20px;
 }
 
-.btn-group + .btn-group, .btn + .btn-group{
+#controls .btn-group, #controls > a.btn{
+	margin-top: 10px;
+	border: none;
+	box-shadow: 0 0 4.8px 0.3px rgba(0, 0, 0, 0.25);
+}
+
+.btn-group + .btn-group{
 	margin-left: 10px;
 }
 
@@ -25,7 +31,7 @@ header, #map{
 	color: #666;
 }
 
-#drawing{
+#drawing, #polygon-controls{
 	display: none;
 }
 
@@ -123,6 +129,12 @@ span.big-icon{
 /* BOOTSTRAP OVERRIDES */
 .btn{
 	line-height: 26px;
+	border: none;
+}
+
+.btn-group .btn:not( :first-child ){
+	border-left: 1px solid #ccc;
+	margin-left: 0;
 }
 
 #drawing .btn.disabled {
@@ -135,6 +147,15 @@ span.big-icon{
 
 .btn-primary:hover{
 	background-color: #df3330;
+}
+
+.btn-info, .btn-info.disabled{
+	background-color: rgba(0,0,0,0.7);
+	border-color: white;
+}
+
+.btn-info:hover{
+	background-color: rgba(0,0,0,0.9);
 }
 
 .modal-header, .modal-footer{

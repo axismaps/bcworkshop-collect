@@ -26,12 +26,17 @@ function init_map(){
 	map.addLayer( drawn );
 	
 	map.on( 'draw:created', finish_draw );
+	map.on('click', function ( e ){
+		if( sketch && sketch._markers.length > 1 ) {
+			$( "#delete-last" ).removeClass( "disabled" );
+		}
+	});
 }
 
 function init_events(){
 	$( "#draw-call" ).click( function(){
 		$( this ).animate( { opacity : 0 }, 'fast', function() {
-			$( "#drawing" ).show();
+			$( "#drawing" ).css( "display", "inline-block" );
 			draw_polygon();
 			$( this ).hide();
 		});
@@ -41,6 +46,11 @@ function init_events(){
 	
 	$( "#poly" ).click( draw_polygon );
 	$( "#circle" ).click( draw_circle );
+	
+	$( "#delete-last" ).click( function() {
+		sketch.deleteLastVertex();
+	});
+	$( "#cancel-polygon" ).click( clear_sketch );
 	
 	$( 'form' ).submit( function( e ){
 		$( this ).hide();
@@ -114,25 +124,28 @@ function check_cookie(){
 }
 
 function draw_polygon(){
-	try {
-    		sketch.disable();
-	}
-	catch( err ) {
-    		sketch = undefined;
-	}
+	clear_sketch();	
+	$( "#polygon-controls" ).css( "display", "inline-block" );
+	
 	sketch = new L.Draw.PolygonTouch( map );
 	sketch.enable();
 }
 
 function draw_circle(){
-	try {
-    		sketch.disable();
-	}
-	catch( err ) {
-    		sketch = undefined;
-	}
+	clear_sketch();
 	sketch = new L.Draw.Circle( map );
 	sketch.enable();
+}
+
+function clear_sketch() {
+	try {
+    		sketch.disable();
+    		$( "#drawing .active" ).removeClass( "active" ).children( "input" ).removeAttr( "checked" );
+	}
+	catch( err ) { }
+	$( "#polygon-controls" ).hide();
+	$( "#delete-last" ).addClass( "disabled" );
+	sketch = undefined;
 }
 
 function finish_draw( e ){
