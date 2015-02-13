@@ -1,7 +1,7 @@
 var map,
 	user,
 	drawn,
-	drawing,
+	sketch,
 	endpoint = window.location.origin + ':3000';
 
 function init(){
@@ -21,7 +21,7 @@ function init_map(){
 	}).setView( [ 32.78, -96.8 ], 12 );
 	L.tileLayer( tileAddress ).addTo( map );
 	
-	//Setting up drawing
+	//Setting up sketch
 	drawn = new L.FeatureGroup();
 	map.addLayer( drawn );
 	
@@ -40,10 +40,7 @@ function init_events(){
 	});
 	
 	$( "#poly" ).click( draw_polygon );
-	$( "#circle" ).click( function() {
-		console.log( "CIC" );
-		draw_circle()
-	});
+	$( "#circle" ).click( draw_circle );
 	
 	$( 'form' ).submit( function( e ){
 		$( this ).hide();
@@ -117,15 +114,25 @@ function check_cookie(){
 }
 
 function draw_polygon(){
-	if( drawing ) drawing.disable();
-	drawing = new L.Draw.PolygonTouch( map );
-	drawing.enable();
+	try {
+    		sketch.disable();
+	}
+	catch( err ) {
+    		sketch = undefined;
+	}
+	sketch = new L.Draw.PolygonTouch( map );
+	sketch.enable();
 }
 
 function draw_circle(){
-	if( drawing ) drawing.disable();
-	drawing = new L.Draw.Circle( map );
-	drawing.enable();
+	try {
+    		sketch.disable();
+	}
+	catch( err ) {
+    		sketch = undefined;
+	}
+	sketch = new L.Draw.Circle( map );
+	sketch.enable();
 }
 
 function finish_draw( e ){
