@@ -2,12 +2,13 @@
   "name": "bcworkshop-collect",
   "version": "0.1",
   "dependencies": {
-    "Leaflet.drawTouch": "https://github.com/axismaps/Leaflet.drawTouch.git",
     "bootstrap": "~3.3.2",
     "leaflet": "~0.7.3",
     "jquery-cookie": "~1.4.1",
     "node-uuid": "~1.4.2",
     "typeahead.js": "~0.10.5",
-    "turf": "~1.4.0"
+    "turf": "~1.4.0",
+    "leaflet.draw": "~0.2.3",
+    "Leaflet.drawTouch": "https://github.com/axismaps/Leaflet.drawTouch.git"
   }
 }

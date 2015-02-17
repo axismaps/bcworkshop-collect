@@ -127,7 +127,7 @@ function draw_polygon(){
 	clear_sketch();	
 	$( "#polygon-controls" ).css( "display", "inline-block" );
 	
-	sketch = new L.Draw.PolygonTouch( map );
+	sketch = new L.Draw.PolygonTouch( map, {allowIntersection: false } );
 	sketch.enable();
 }
 
