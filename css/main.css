@@ -1,0 +1,36 @@
+header{
+	height: 140px;
+}
+
+header img{
+	margin: 25px 30px;
+}
+
+header, #map{
+	width: 100%;
+}
+
+#controls{
+	position: absolute;
+	width: 100%;
+	top: 150px;
+	left: 20px;
+}
+
+#controls .btn-group, #controls > a.btn{
+	margin-top: 10px;
+	border: none;
+	box-shadow: 0 0 4.8px 0.3px rgba(0, 0, 0, 0.25);
+}
+
+.btn-group + .btn-group{
+	margin-left: 10px;
+}
+
+#zoom{
+	color: #666;
+}
+
+#drawing, #polygon-controls{
+	display: none;
+}

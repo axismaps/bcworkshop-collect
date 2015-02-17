@@ -1,40 +1,3 @@
-header{
-	height: 140px;
-}
-
-header img{
-	margin: 25px 30px;
-}
-
-header, #map{
-	width: 100%;
-}
-
-#controls{
-	position: absolute;
-	width: 100%;
-	top: 150px;
-	left: 20px;
-}
-
-#controls .btn-group, #controls > a.btn{
-	margin-top: 10px;
-	border: none;
-	box-shadow: 0 0 4.8px 0.3px rgba(0, 0, 0, 0.25);
-}
-
-.btn-group + .btn-group{
-	margin-left: 10px;
-}
-
-#zoom{
-	color: #666;
-}
-
-#drawing, #polygon-controls{
-	display: none;
-}
-
 .twitter-typeahead, .tt-dropdown-menu{
 	width: 100%;
 }
@@ -124,48 +87,4 @@ span.big-icon{
 
 .ajax > p{
 	text-align: center;
-}
-
-/* BOOTSTRAP OVERRIDES */
-.btn{
-	line-height: 26px;
-	border: none;
-}
-
-.btn-group .btn:not( :first-child ){
-	border-left: 1px solid #ccc;
-	margin-left: 0;
-}
-
-#drawing .btn.disabled {
-	opacity: 1;
-}
-
-.btn-primary{
-	background-color: #ee2a25;
-}
-
-.btn-primary:hover{
-	background-color: #df3330;
-}
-
-.btn-info, .btn-info.disabled{
-	background-color: rgba(0,0,0,0.7);
-	border-color: white;
-}
-
-.btn-info:hover{
-	background-color: rgba(0,0,0,0.9);
-}
-
-.modal-header, .modal-footer{
-	border: none;
-}
-
-.form-control{
-	background-color: #eee;
-	-webkit-border-radius: 2px;
-	border-radius: 2px;
-	-webkit-box-shadow: none;
-	box-shadow: none;
 }
