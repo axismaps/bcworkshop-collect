@@ -10,5 +10,11 @@ gulp.task( 'default', function(){
             css : [ minifyCss(), 'concat' ],
             js : [ uglify(), 'concat' ]
         }))
-        .pipe( gulp.dest( 'public' ) )
+        .pipe( gulp.dest( 'public/' ) )
+    
+    gulp.src( 'img/*' )
+    		.pipe( gulp.dest( 'public/img' ) );
+    	
+    	gulp.src( 'bower_components/bootstrap/fonts/*' )
+    		.pipe( gulp.dest( 'public/fonts' ) );
 });

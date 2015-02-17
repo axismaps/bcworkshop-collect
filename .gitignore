@@ -1,4 +1,6 @@
 bower_components/*
-tiles.js
 node_modules/*
+public/*
+
 *.pem
+tiles.js

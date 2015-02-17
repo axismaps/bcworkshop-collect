@@ -5,11 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		
 		<title>bcWorkshop - Collect</title>
-		
-		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+		<!-- build:css css/site.css -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
 		<link rel="stylesheet" href="bower_components/leaflet.draw//dist/leaflet.draw.css" />
 		<link rel="stylesheet" href="main.css" />
+		<!-- endbuild -->
 	</head>
 	<body>
 		<header>
@@ -88,12 +89,13 @@
 			</div>
 		</div>
 		
+		<!-- build:js js/site.js -->
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="bower_components/typeahead.js/dist/typeahead.bundle.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
 		<script src="bower_components/jquery-cookie/jquery.cookie.js"></script>
 		<script src="bower_components/node-uuid/uuid.js"></script>
-		<script src="bower_components/leaflet/dist/leaflet.js"></script>
+		<script src="bower_components/leaflet/dist/leaflet-src.js"></script>
 		
 		<script src="bower_components/leaflet.draw/src/Leaflet.draw.js"></script>
 		<script src="bower_components/leaflet.draw/src/Tooltip.js"></script>
@@ -106,8 +108,9 @@
 		<script src="bower_components/leaflet.draw/src/ext/Polyline.Intersect.js"></script>
 		<script src="bower_components/leaflet.draw/src/ext/Polygon.Intersect.js"></script>
 		
-		<script src="bower_components/turf/turf.min.js"></script>
+		<script src="bower_components/turf/turf.js"></script>
 		<script src="tiles.js"></script>
 		<script src="main.js"></script>
+		<!-- endbuild -->
 	</body>
 </html>
