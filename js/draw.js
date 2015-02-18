@@ -6,10 +6,17 @@ function draw_polygon(){
 	clear_sketch();	
 	$( "#polygon-controls" ).css( "display", "inline-block" );
 	
-	sketch = new L.Draw.PolygonTouch( map, { 
+	var options = { 
 		allowIntersection : false,
 		shapeOptions : { color : getColor() }
-	});
+	};
+	
+	if( $( "#map" ).hasClass( "leaflet-touch" ) ) {
+		sketch = new L.Draw.PolygonTouch( map, options );
+	}
+	else {
+		sketch = new L.Draw.Polygon( map, options );
+	}
 	sketch.enable();
 }
 
