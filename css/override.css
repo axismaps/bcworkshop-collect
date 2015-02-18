@@ -26,7 +26,7 @@
 }
 
 .btn-info:hover, .btn-info:focus{
-	background-color: rgba(0,0,0,0.9);
+	background-color: rgba(0,0,0,0.9) !important;
 }
 
 .modal-header, .modal-footer{

@@ -70,9 +70,18 @@ function finish_draw( e ) {
 	$( "#finish-controls" ).css( "display", "inline-block" );
 }
 
-function show_naming( e ){
-	
-	$( '#name' ).modal();
+function check_vertices() {
+	try{
+		if( sketch._markers.length > 1 ) {
+			$( "#delete-last" ).removeClass( "disabled" );
+		}
+		else {
+			$( "#delete-last" ).addClass( "disabled" );
+		}
+	}
+	catch( err ) {
+		$( "#delete-last" ).addClass( "disabled" );
+	}
 }
 
 function getColor() {

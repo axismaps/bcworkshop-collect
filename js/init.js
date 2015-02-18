@@ -24,11 +24,7 @@ function init_map(){
 	map.addLayer( drawn );
 	
 	map.on( 'draw:created', finish_draw );
-	map.on('click', function ( e ){
-		if( sketch && sketch._markers.length > 1 ) {
-			$( "#delete-last" ).removeClass( "disabled" );
-		}
-	});
+	map.on( 'click', check_vertices );
 }
 
 function init_events(){
@@ -47,6 +43,7 @@ function init_events(){
 	
 	$( "#delete-last" ).click( function() {
 		sketch.deleteLastVertex();
+		check_vertices();
 	});
 	$( "#clear_confirm" ).click( clear_sketch );
 	
