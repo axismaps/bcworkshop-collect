@@ -45,9 +45,6 @@ function clear_sketch() {
 	$( "#drawing" ).css( "display", "inline-block" );
 	$( "#delete-last" ).addClass( "disabled" );
 	$( "#confirm" ).modal( 'hide' );
-	
-	sketch = undefined;
-	holding = undefined;
 }
 
 function finish_draw( e ) {
@@ -70,6 +67,11 @@ function finish_draw( e ) {
 	$( "#finish-controls" ).css( "display", "inline-block" );
 }
 
+function add_drawn() {
+	drawn.addLayer( holding );
+	
+}
+
 function check_vertices() {
 	try{
 		if( sketch._markers.length > 1 ) {
@@ -87,5 +89,7 @@ function check_vertices() {
 function getColor() {
 	var c = colors.shift();
 	colors.push( c );
+	$( "#color" ).val( c );
+	
 	return c;
 }

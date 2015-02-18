@@ -47,27 +47,7 @@ function init_events(){
 	});
 	$( "#clear_confirm" ).click( clear_sketch );
 	
-	$( 'form' ).submit( function( e ){
-		$( this ).hide();
-		$( "#name .modal-header" ).hide();
-		
-		$( "#ajax-loading b" ).text( $( "#name-input" ).val() );
-		$( "#ajax-loading" ).show();
-		
-        $.ajax({
-            type : "POST",
-            url : endpoint + '/add',
-            data : $( this ).serialize(),
- 
-            success: function( data, status ) {
-                $( "#ajax-loading" ).hide();
-                $( "#ajax-success b").text( data );
-                $( "#ajax-success" ).show();
-            }
-        });
- 
-        e.preventDefault();
-    });
+	$( 'form' ).submit( send_neighborhood );
 	
 	$( "#zoom-out" ).click( function(){
 		map.zoomOut();
@@ -101,6 +81,31 @@ function init_names() {
 		displayKey : 'name',
 		source : names.ttAdapter()
 	});
+}
+
+function send_neighborhood() {
+	$( this ).hide();
+	$( "#name .modal-header" ).hide();
+	
+	$( "#ajax-loading b" ).text( $( "#name-input" ).val() );
+	$( "#ajax-loading" ).show();
+	
+    $.ajax({
+        type : "POST",
+        url : endpoint + '/add',
+        data : $( this ).serialize(),
+
+        success: function( data, status ) {
+            $( "#ajax-loading" ).hide();
+            $( "#ajax-success b").text( data );
+            $( "#ajax-success" ).show();
+            
+            clear_sketch();
+            add_drawn();
+        }
+    });
+
+    return false;
 }
 
 function resize(){
