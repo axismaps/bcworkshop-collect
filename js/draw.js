@@ -69,7 +69,7 @@ function finish_draw( e ) {
 
 function add_drawn() {
 	drawn.addLayer( holding );
-	
+	$( "#drawn" ).append( '<li class="list-group-item"><span class="glyphicon glyphicon-trash delete"></span><span class="swatch" style="background-color:' + $( "#color" ).val() + '"></span>' + $( "#name-input" ).val() + '</li>' );
 }
 
 function check_vertices() {

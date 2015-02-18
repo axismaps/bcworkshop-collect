@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		
 		<title>bcWorkshop - Collect</title>
+		
 		<!-- build:css css/site.css -->
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
@@ -49,6 +50,10 @@
 			</div>
 		</div>
 		
+		<ul id="drawn" class="list-group">
+			<li class="list-group-item"><div id="switch"><span class="glyphicon glyphicon-chevron-up up"></span><span class="glyphicon glyphicon-chevron-down down"></span></div>Your submitted neighborhoods</li>
+		</ul>
+		
 		<div class="modal fade" id="name" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -75,6 +80,7 @@
 								</div>
 								<input type="hidden" id="uuid" name="uuid">
 								<input type="hidden" id="geojson" name="geojson">
+								<input type="hidden" id="color" name="geojson">
 								<hr />
 								<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-cloud-upload"></span> Submit</button>
 								<a data-dismiss="modal">Close</a>

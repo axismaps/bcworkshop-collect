@@ -33,3 +33,46 @@ header, #map{
 #drawing, #polygon-controls, #finish-controls{
 	display: none;
 }
+
+#drawn{
+	min-width: 300px;
+	position: absolute;
+	bottom: -20px;
+	left: 20px;
+}
+
+#drawn #switch{
+	float: right;
+	color: #666;
+	font-size: 16px;
+}
+
+#drawn .down{
+	display: none;
+}
+
+#drawn.up .down{
+	display: inline;
+}
+
+#drawn.up .up{
+	display: none;
+}
+
+#drawn li:first-child{
+	background-color: white;
+}
+
+.delete{
+	float: right;
+	cursor: pointer;
+}
+
+.swatch{
+	width: 12px;
+	height: 12px;
+	margin-right: 10px;
+	display: inline-block;
+	position: relative;
+	top: 1px;
+}

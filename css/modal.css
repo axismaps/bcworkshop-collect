@@ -88,3 +88,7 @@ span.big-icon{
 .ajax > p{
 	text-align: center;
 }
+
+.list-group-item{
+	background-color: whitesmoke;
+}
