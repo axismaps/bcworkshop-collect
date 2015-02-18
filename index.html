@@ -35,8 +35,8 @@
 				</label>
 			</div>
 			<div id="finish-controls" class="btn-group" role="group">
-				<a class="btn btn-info cancel"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Clear</a>
-				<a class="btn btn-primary" data-toggle="modal" data-target="#name"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Name this neighborhood</a>
+				<button class="btn btn-info cancel" data-toggle="modal" data-target="#confirm"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Clear</button>
+				<button class="btn btn-primary" data-toggle="modal" data-target="#name"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Name this neighborhood</buton>
 			</div>
 			<div id="zoom" class="btn-group" role="group">
 				<a id="zoom-out" class="btn btn-default"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>
@@ -44,8 +44,8 @@
 			</div>
 			<br />
 			<div id="polygon-controls" class="btn-group" role="group">
-				<a class="btn btn-info cancel"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</a>
-				<a id="delete-last" class="btn btn-info disabled"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Delete last point</a>
+				<button class="btn btn-info cancel" data-toggle="modal" data-target="#confirm"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+				<button id="delete-last" class="btn btn-info disabled"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Delete last point</button>
 			</div>
 		</div>
 		
@@ -90,6 +90,25 @@
 							<hr />
 							<button id="draw-another" type="button" class="btn btn-primary">Yes, draw another</button>
 							<a data-dismiss="modal">No, I'm finished drawing</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="confirm" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Deleting neighborhood</h4>
+					</div>
+					<div class="modal-body">
+						<p>Remove this neighborhood from the map?</p>
+						<p>This cannot be undone.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						<button id="clear_confirm" type="button" class="btn btn-primary">Confirm</button>
 					</div>
 				</div>
 			</div>

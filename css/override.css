@@ -16,7 +16,7 @@
 	background-color: #ee2a25;
 }
 
-.btn-primary:hover{
+.btn-primary:hover, .btn-primary:focus{
 	background-color: #df3330;
 }
 
@@ -25,12 +25,16 @@
 	border-color: white;
 }
 
-.btn-info:hover{
+.btn-info:hover, .btn-info:focus{
 	background-color: rgba(0,0,0,0.9);
 }
 
 .modal-header, .modal-footer{
 	border: none;
+}
+
+.modal-dialog{
+	margin-top: 200px;
 }
 
 .form-control{

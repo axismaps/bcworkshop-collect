@@ -44,6 +44,7 @@ function clear_sketch() {
 	$( "#polygon-controls, #finish-controls" ).hide();
 	$( "#drawing" ).css( "display", "inline-block" );
 	$( "#delete-last" ).addClass( "disabled" );
+	$( "#confirm" ).modal( 'hide' );
 	
 	sketch = undefined;
 	holding = undefined;
