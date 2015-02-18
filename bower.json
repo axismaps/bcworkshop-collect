@@ -9,6 +9,7 @@
     "typeahead.js": "~0.10.5",
     "turf": "~1.4.0",
     "leaflet.draw": "~0.2.3",
-    "Leaflet.drawTouch": "https://github.com/axismaps/Leaflet.drawTouch.git"
+    "Leaflet.drawTouch": "https://github.com/axismaps/Leaflet.drawTouch.git",
+    "underscore": "~1.7.0"
   }
 }
