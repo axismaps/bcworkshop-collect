@@ -12,7 +12,6 @@ header, #map{
 
 #controls{
 	position: absolute;
-	width: 100%;
 	top: 150px;
 	left: 20px;
 }
@@ -31,6 +30,6 @@ header, #map{
 	color: #666;
 }
 
-#drawing, #polygon-controls{
+#drawing, #polygon-controls, #finish-controls{
 	display: none;
 }

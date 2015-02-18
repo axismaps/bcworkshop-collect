@@ -34,13 +34,17 @@
 					<input type="radio" name="options" autocomplete="off"><img src="img/circle.png" alt="circle">
 				</label>
 			</div>
+			<div id="finish-controls" class="btn-group" role="group">
+				<a class="btn btn-info cancel"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Clear</a>
+				<a class="btn btn-primary" data-toggle="modal" data-target="#name"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Name this neighborhood</a>
+			</div>
 			<div id="zoom" class="btn-group" role="group">
 				<a id="zoom-out" class="btn btn-default"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>
 				<a id="zoom-in" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 			</div>
 			<br />
 			<div id="polygon-controls" class="btn-group" role="group">
-				<a id="cancel-polygon" class="btn btn-info"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</a>
+				<a class="btn btn-info cancel"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</a>
 				<a id="delete-last" class="btn btn-info disabled"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Delete last point</a>
 			</div>
 		</div>

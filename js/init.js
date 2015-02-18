@@ -48,7 +48,7 @@ function init_events(){
 	$( "#delete-last" ).click( function() {
 		sketch.deleteLastVertex();
 	});
-	$( "#cancel-polygon" ).click( clear_sketch );
+	$( "a.cancel" ).click( clear_sketch );
 	
 	$( 'form' ).submit( function( e ){
 		$( this ).hide();

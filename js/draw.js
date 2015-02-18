@@ -1,5 +1,6 @@
 var drawn,
 	sketch,
+	holding,
 	colors = _.shuffle( [ 'rgb(228,26,28)', 'rgb(55,126,184)', 'rgb(77,175,74)', 'rgb(152,78,163)', 'rgb(255,127,0)', 'rgb(255,255,51)','rgb(166,86,40)', 'rgb(247,129,191)', 'rgb(153,153,153)' ] );
 
 function draw_polygon(){
@@ -35,23 +36,41 @@ function clear_sketch() {
     		$( "#drawing .active" ).removeClass( "active" ).children( "input" ).removeAttr( "checked" );
 	}
 	catch( err ) { }
-	$( "#polygon-controls" ).hide();
+	
+	if( map.hasLayer( holding ) ) {
+		map.removeLayer( holding );
+	}
+	
+	$( "#polygon-controls, #finish-controls" ).hide();
+	$( "#drawing" ).css( "display", "inline-block" );
 	$( "#delete-last" ).addClass( "disabled" );
+	
 	sketch = undefined;
+	holding = undefined;
 }
 
-function finish_draw( e ){
+function finish_draw( e ) {
+	holding = e.layer;
+	holding.addTo( map );
+	
 	if( e.layerType == "circle" ) {
-		var pt = e.layer.toGeoJSON();
-		var buffer = turf.buffer( pt, e.layer.getRadius(), "meters" );
+		var pt = holding.toGeoJSON();
+		var buffer = turf.buffer( pt, holding.getRadius(), "meters" );
 		var geom = buffer.features[ 0 ].geometry;
 	}
 	else {
-		var geom = e.layer.toGeoJSON().geometry;
+		var geom = holding.toGeoJSON().geometry;
 	}
-	var geojson = JSON.stringify( geom ).replace(/\}$/gim, ",\"crs\":{\"type\":\"name\",\"properties\":{\"name\":\"EPSG:4326\"}}}" );
+	var geojson = JSON.stringify( geom ).replace( /\}$/gim, ",\"crs\":{\"type\":\"name\",\"properties\":{\"name\":\"EPSG:4326\"}}}" );
 	$( "#geojson" ).val( geojson );
 	$( "#uuid" ).val( user );
+	
+	$( "#drawing, #polygon-controls" ).hide();
+	$( "#finish-controls" ).css( "display", "inline-block" );
+}
+
+function show_naming( e ){
+	
 	$( '#name' ).modal();
 }
 
