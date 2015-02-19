@@ -49,6 +49,13 @@ function init_events(){
 	
 	$( 'form' ).submit( send_neighborhood );
 	
+	$( "#name" ).on( 'hidden.bs.modal', function() {
+		$( "#name form" ).show();
+		$( "#name form :text, #name form textarea" ).val( '' );
+		$( "#name form :radio" ).removeAttr( "checked" );
+		$( "#ajax-success" ).hide();
+	});
+	
 	$( "#zoom-out" ).click( function(){
 		map.zoomOut();
 		if( map.getZoom() - 1 <= map.getMinZoom() ) $( "#zoom-out" ).addClass( "disabled" );
@@ -90,19 +97,18 @@ function send_neighborhood() {
 	$( "#ajax-loading b" ).text( $( "#name-input" ).val() );
 	$( "#ajax-loading" ).show();
 	
-    $.ajax({
-        type : "POST",
-        url : endpoint + '/add',
-        data : $( this ).serialize(),
-
-        success: function( data, status ) {
-            $( "#ajax-loading" ).hide();
-            $( "#ajax-success b").text( data );
-            $( "#ajax-success" ).show();
-            
-            clear_sketch();
-            add_drawn();
-        }
+	$.ajax({
+		type : "POST",
+		url : endpoint + '/add',
+		data : $( this ).serialize(),
+		success: function( data, status ) {
+			$( "#ajax-loading" ).hide();
+			$( "#ajax-success b").text( data );
+			$( "#ajax-success" ).show();
+			
+			clear_sketch();
+			add_drawn();
+		}
     });
 
     return false;
