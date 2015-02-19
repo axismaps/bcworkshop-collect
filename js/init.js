@@ -28,14 +28,10 @@ function init_map(){
 }
 
 function init_events(){
-	$( "#draw-call" ).click( function(){
-		$( this ).animate( { opacity : 0 }, 'fast', function() {
-			$( "#drawing" ).css( "display", "inline-block" );
-			draw_polygon();
-			$( this ).hide();
-		});
-		
-		return false;
+	$( "#draw-call, #draw-another" ).click( function(){
+		$( "#draw-call" ).hide();
+		$( "#drawing" ).css( "display", "inline-block" );
+		draw_polygon();
 	});
 	
 	$( "#poly" ).click( draw_polygon );
@@ -50,7 +46,7 @@ function init_events(){
 	$( 'form' ).submit( send_neighborhood );
 	
 	$( "#name" ).on( 'hidden.bs.modal', function() {
-		$( "#name form" ).show();
+		$( "#name form, #name .modal-header" ).show();
 		$( "#name form :text, #name form textarea" ).val( '' );
 		$( "#name form :radio" ).removeAttr( "checked" );
 		$( "#ajax-success" ).hide();
