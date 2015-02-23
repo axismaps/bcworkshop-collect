@@ -43,6 +43,10 @@ function init_events(){
 	});
 	$( "#clear_confirm" ).click( clear_sketch );
 	
+	$( "#drawn" ).on( "click", ".delete", function() {
+		delete_neighborhood( $( this ).parent().text() );
+	})
+	
 	$( 'form' ).submit( send_neighborhood );
 	
 	$( "#name" ).on( 'hidden.bs.modal', function() {

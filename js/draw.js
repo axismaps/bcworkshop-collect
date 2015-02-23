@@ -49,6 +49,14 @@ function clear_sketch() {
 
 function finish_draw( e ) {
 	holding = e.layer;
+function delete_neighborhood( name ) {
+	$.ajax({
+		url : endpoint + '/delete/' + user + '/' + encodeURIComponent( name ),
+		success : function( data ) {
+			console.log( data );
+		}
+	});
+}
 	holding.addTo( map );
 	
 	if( e.layerType == "circle" ) {
