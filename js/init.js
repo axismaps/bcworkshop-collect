@@ -1,5 +1,6 @@
 var map,
 	user,
+	deleting,
 	endpoint = window.location.origin + ':3000';
 
 function init(){
@@ -41,9 +42,15 @@ function init_events(){
 		sketch.deleteLastVertex();
 		check_vertices();
 	});
+	$( "button.cancel" ).click( function() {
+		show_confirm( clear_sketch );
+	});
 	
-	$( "#clear_confirm" ).click( clear_sketch );
-	$( "#drawn" ).on( "click", ".delete", delete_neighborhood );
+	$( "#drawn" ).on( "click", ".delete", function() {
+		deleting = $( this ).parent();
+		show_confirm( delete_neighborhood );
+	});
+	
 	$( 'form' ).submit( send_neighborhood );
 	
 	$( "#name" ).on( 'hidden.bs.modal', function() {
@@ -117,6 +124,12 @@ function send_neighborhood() {
     });
 
     return false;
+}
+
+function show_confirm( callback ) {
+	$( "#confirm" ).modal( 'show' );
+	$( "#clear_confirm" ).unbind( "click" );
+	$( "#clear_confirm" ).click( callback );
 }
 
 function resize(){

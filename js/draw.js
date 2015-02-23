@@ -47,18 +47,17 @@ function clear_sketch() {
 	$( "#confirm" ).modal( 'hide' );
 }
 
-function delete_neighborhood() {
-	var name = $( this ).parent().text();
-	
+function delete_neighborhood( $div ) {
 	$.ajax({
-		url : endpoint + '/delete/' + user + '/' + encodeURIComponent( name ),
+		url : endpoint + '/delete/' + user + '/' + encodeURIComponent( deleting.text() ),
 		success : function( data ) {
 			console.log( data );
 		}
 	});
 	
-	drawn.removeLayer( $( this ).parent().data().layer );
-	$( this ).parent().remove();
+	drawn.removeLayer( deleting.data().layer );
+	deleting.remove();
+	$( "#confirm" ).modal( 'hide' );
 }
 
 function finish_draw( e ) {	
