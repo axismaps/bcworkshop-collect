@@ -47,18 +47,22 @@ function clear_sketch() {
 	$( "#confirm" ).modal( 'hide' );
 }
 
-function delete_neighborhood( name ) {
+function delete_neighborhood() {
+	var name = $( this ).parent().text();
+	
 	$.ajax({
 		url : endpoint + '/delete/' + user + '/' + encodeURIComponent( name ),
 		success : function( data ) {
 			console.log( data );
 		}
 	});
+	
+	drawn.removeLayer( $( this ).parent().data().layer );
+	$( this ).parent().remove();
 }
 
 function finish_draw( e ) {	
-	holding = copy_layer( e.layer );
-	holding.addTo( map );
+	holding = copy_layer( e.layer ).addTo( map );
 	
 	if( e.layerType == "circle" ) {
 		var pt = e.layer.toGeoJSON();
@@ -78,8 +82,12 @@ function finish_draw( e ) {
 }
 
 function add_drawn() {
-	drawn.addLayer( copy_layer( holding ) );
-	$( "#drawn" ).append( '<li class="list-group-item"><span class="glyphicon glyphicon-trash delete"></span><span class="swatch" style="background-color:' + $( "#color" ).val() + '"></span>' + $( "#name-input" ).val() + '</li>' );
+	var layer = copy_layer( holding ).addTo( drawn ),
+		$item = $( '<li class="list-group-item"><span class="glyphicon glyphicon-trash delete"></span><span class="swatch" style="background-color:' + $( "#color" ).val() + '"></span>' + $( "#name-input" ).val() + '</li>' );
+	
+	$item
+		.data( { layer : layer } )
+		.appendTo( $( "#drawn" ) );
 }
 
 function copy_layer( layer ) {
