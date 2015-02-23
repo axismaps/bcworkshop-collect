@@ -88,6 +88,8 @@ function add_drawn() {
 	$item
 		.data( { layer : layer } )
 		.appendTo( $( "#drawn" ) );
+	
+	$( "#drawn" ).css( "margin-bottom", ( $( "#drawn" ).children().length - 1 ) * -42 );
 }
 
 function copy_layer( layer ) {

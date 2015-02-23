@@ -52,6 +52,14 @@ function init_events(){
 		$( "#name form :radio" ).removeAttr( "checked" );
 		$( "#ajax-success" ).hide();
 	});
+	$( "#switch" ).click( function() {
+		if( $( "#drawn" ).hasClass( "up" ) ) {
+			$( "#drawn" ).removeClass( "up" );
+		}
+		else {
+			$( "#drawn" ).addClass( "up" );
+		}
+	});
 	
 	$( "#zoom-out" ).click( function(){
 		map.zoomOut();

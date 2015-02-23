@@ -36,15 +36,26 @@ header, #map{
 
 #drawn{
 	min-width: 300px;
-	position: absolute;
-	bottom: -20px;
+	margin: 0;
+	position: fixed;
+	bottom: 0;
 	left: 20px;
+	-webkit-transition: all 250ms ease-in;
+	-moz-transition: all 250ms ease-in;
+	-ms-transition: all 250ms ease-in;
+	-o-transition: all 250ms ease-in;
+	transition: all 250ms ease-in;
+}
+
+#drawn.up{
+	margin-bottom: 0 !important;
 }
 
 #drawn #switch{
 	float: right;
 	color: #666;
 	font-size: 16px;
+	cursor: pointer;
 }
 
 #drawn .down{

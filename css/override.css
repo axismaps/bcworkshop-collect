@@ -44,3 +44,7 @@
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
+
+.list-group-item:last-child{
+	border-radius: 0;
+}
