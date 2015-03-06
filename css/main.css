@@ -64,16 +64,6 @@ header, #map{
 	color: #666;
 }
 
-.dropdown-menu{
-	width: 200px;
-	padding: 15px;
-	line-height: 24px;
-}
-
-.dropdown-menu input{
-	margin-right: 10px;
-}
-
 #drawing, #polygon-controls, #finish-controls{
 	display: none;
 }
