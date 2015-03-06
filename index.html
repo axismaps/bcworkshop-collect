@@ -49,6 +49,13 @@
 				<a id="zoom-out" class="btn btn-default"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>
 				<a id="zoom-in" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 			</div>
+			<div class="dropdown btn-group" role="group">
+				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"><span class="glyphicon glyphicon-cog"></span></button>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					<li role="presentation"><i>Choose a map overlay...</i></li>
+					<li role="presentation"><label><input type="radio" name="layers" value="" checked>None</label></li>
+				</ul>
+			</div>
 			<br />
 			<div id="polygon-controls" class="btn-group" role="group">
 				<button class="btn btn-info cancel"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
@@ -156,10 +163,12 @@
 		<script src="bower_components/leaflet.draw/dist/leaflet.draw-src.js"></script>
 		<script src="bower_components/Leaflet.drawTouch/src/dom/Draw.Touch.js"></script>
 		<script src="bower_components/Leaflet.drawTouch/src/draw/handler/Draw.PolygonTouch.js"></script>
+		<script src="bower_components/leaflet-omnivore/leaflet-omnivore.js"></script>
 		
 		<script src="js/tiles.js"></script>
 		<script src="js/draw.js"></script>
 		<script src="js/init.js"></script>
+		<script src="js/layers.js"></script>
 		<!-- endbuild -->
 	</body>
 </html>
