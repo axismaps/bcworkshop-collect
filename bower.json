@@ -10,6 +10,8 @@
     "turf": "~1.4.0",
     "leaflet.draw": "~0.2.3",
     "Leaflet.drawTouch": "https://github.com/axismaps/Leaflet.drawTouch.git",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+	"leaflet-omnivore": "~0.3.2",
+	"layer-switcher-module": "https://github.com/kingfisher13/layer-switcher-module.git"
   }
 }
