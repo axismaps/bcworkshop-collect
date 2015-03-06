@@ -13,6 +13,11 @@ var layers = [
 		"table" : "zips",
 		"name" : "Zip Codes",
 		"default": false
+	},
+	{
+		"table" : "city_limits",
+		"name" : "City Limits",
+		"default" : false
 	}
 ],
 overlays;
