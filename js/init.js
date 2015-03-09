@@ -109,7 +109,8 @@ function send_neighborhood() {
 	$( "#ajax-loading b" ).text( $( "#name-input" ).val() );
 	$( "#ajax-loading" ).show();
 	
-	var uuid = $( 'form #uuid').val();
+	var uuid = $( 'form #uuid').val(),
+	neighborhood_name = $( 'form #name-input').val();
 	
 	$.ajax({
 		type : "POST",
@@ -119,7 +120,12 @@ function send_neighborhood() {
 			$( "#ajax-loading" ).hide();
 			$( "#ajax-success b").text( data );
 			
-			$( "#email-info" ).attr( "href", "mailto:bc@bcworkshop.org?subject=More Information about Neighborhood&body=Neighborhood ID: " + uuid );
+			$( "#email-info" ).attr( "href", 
+				"mailto:bc@bcworkshop.org?" + 
+				"subject=More Information about Neighborhood&" + 
+				"body=" + 
+					"Neighborhood ID: " + uuid +
+					"Neighborhood Name: " + neighborhood_name);
 			
 			$( "#ajax-success" ).show();
 			
