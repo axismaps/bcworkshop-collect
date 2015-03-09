@@ -124,8 +124,8 @@ function send_neighborhood() {
 				"mailto:bc@bcworkshop.org?" + 
 				"subject=More Information about Neighborhood&" + 
 				"body=" + 
-					"Neighborhood ID: " + uuid +
-					"Neighborhood Name: " + neighborhood_name);
+					"Neighborhood ID: " + uuid + "%0D%0A" +
+					"Neighborhood Name: " + neighborhood_name + "%0D%0A");
 			
 			$( "#ajax-success" ).show();
 			
