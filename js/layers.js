@@ -47,6 +47,7 @@ function init_layers( button ) {
 			});
 			omnivore.topojson( endpoint + "/topojson/" + $( this ).val(), null, layerStyle ).addTo( overlays );
 		}
+		map.getContainer().focus();
 	});	
 	button.find( 'input:checked' ).trigger( 'click' );
 }
