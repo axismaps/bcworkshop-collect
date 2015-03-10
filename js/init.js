@@ -120,12 +120,7 @@ function send_neighborhood() {
 			$( "#ajax-loading" ).hide();
 			$( "#ajax-success b").text( data );
 			
-			$( "#email-info" ).attr( "href", 
-				"mailto:bc@bcworkshop.org?" + 
-				"subject=More Information about Neighborhood&" + 
-				"body=" + 
-					"Neighborhood ID: " + uuid + "%0D%0A" +
-					"Neighborhood Name: " + neighborhood_name + "%0D%0A");
+			$( "#email-info" ).attr( "href", "mailto:bc@bcworkshop.org?subject=More Information about Neighborhood: " + neighborhood_name + " [" + uuid + "]" );
 			
 			$( "#ajax-success" ).show();
 			
