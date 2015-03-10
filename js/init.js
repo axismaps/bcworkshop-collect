@@ -6,6 +6,7 @@ var map,
 function init(){
 	check_cookie();
 	init_map();
+	init_layers( $( ".dropdown-menu" ) );
 	init_events();
 	init_names();
 	resize();
@@ -67,6 +68,8 @@ function init_events(){
 			$( "#drawn" ).addClass( "up" );
 		}
 	});
+	
+	$( window ).resize( resize );
 	
 	$( "#zoom-out" ).click( function(){
 		map.zoomOut();
