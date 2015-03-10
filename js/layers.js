@@ -36,6 +36,7 @@ function init_layers( button ) {
 		overlays.clearLayers();
 		
 		if( $( this ).val() != '' ) {
+			$( '#layer-switcher .dropdown-toggle' ).html( '<i class="fa fa-spinner fa-pulse"></i>' );
 			var layerStyle = L.geoJson( null, {
 				style : function( feature ) {
 					return { 
@@ -43,9 +44,11 @@ function init_layers( button ) {
 						fillOpacity : 0,
 						pointerEvents : 'none'
 					};
-		    		}
+		    	}
 			});
-			omnivore.topojson( endpoint + "/topojson/" + $( this ).val(), null, layerStyle ).addTo( overlays );
+			omnivore.topojson( endpoint + "/topojson/" + $( this ).val(), null, layerStyle ).addTo( overlays ).on( 'ready', function() {
+				$( '#layer-switcher .dropdown-toggle' ).html( '<i class="fa fa-cog"></i>' );
+			}); 
 		}
 		map.getContainer().focus();
 	});	
