@@ -36,7 +36,8 @@ function init_layers( button ) {
 		overlays.clearLayers();
 		
 		if( $( this ).val() != '' ) {
-			$( '#layer-switcher .dropdown-toggle' ).html( '<i class="fa fa-spinner fa-pulse"></i>' );
+			$( "#dropdown-toggle" ).children().toggle();
+			
 			var layerStyle = L.geoJson( null, {
 				style : function( feature ) {
 					return { 
@@ -47,7 +48,7 @@ function init_layers( button ) {
 		    	}
 			});
 			omnivore.topojson( endpoint + "/topojson/" + $( this ).val(), null, layerStyle ).addTo( overlays ).on( 'ready', function() {
-				$( '#layer-switcher .dropdown-toggle' ).html( '<i class="fa fa-cog"></i>' );
+				$( "#dropdown-toggle" ).children().toggle();
 			}); 
 		}
 		map.getContainer().focus();

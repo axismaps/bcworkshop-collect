@@ -52,7 +52,10 @@
 				<a id="zoom-in" class="btn btn-default"><i class="fa fa-plus" aria-hidden="true"></i></a>
 			</div>
 			<div id="layer-switcher" class="dropdown btn-group" role="group">
-				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"><img src="img/layers_360.png"></button>
+				<button id="dropdown-toggle" class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+					<img src="img/layers_360.png">
+					<i class="fa fa-spinner fa-pulse loading"></i>
+				</button>
 				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 					<li role="presentation"><i>Choose a map overlay...</i></li>
 				</ul>
