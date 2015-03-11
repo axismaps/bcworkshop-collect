@@ -131,7 +131,3 @@ header, #map{
 	height: 30px;
 	margin-right: 20px;
 }
-
-#dropdown-toggle .loading{
-	display: none;
-}

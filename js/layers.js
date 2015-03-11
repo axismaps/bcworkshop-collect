@@ -26,6 +26,9 @@ function init_layers( button ) {
 	//init layer group to store overlays
 	overlays = L.layerGroup().addTo( map );
 	
+	//hides the loader icon on first view
+	$( '#dropdown-toggle i' ).toggle();
+	
 	//button should be a jquery object
 	button.append( '<li role="presentation"><label><input type="radio" name="layers" value="" checked>None</label></li>' );
 	_.each( layers, function( layer ) {
