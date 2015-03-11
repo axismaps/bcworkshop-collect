@@ -86,6 +86,7 @@ function init_events(){
 		if( map.getZoom() + 1 >= map.getMaxZoom() ) $( "#zoom-in" ).addClass( "disabled" );
 		$( "#zoom-out" ).removeClass( "disabled" );
 	});
+	keyboard_events();
 }
 
 function init_names() {
