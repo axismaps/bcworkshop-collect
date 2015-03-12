@@ -120,7 +120,7 @@ function send_neighborhood() {
 	$.ajax({
 		type : "POST",
 		url : endpoint + '/add',
-		data : $( this ).serialize(),
+		data : escapeSpecialCharacters( $( this ).serialize() ),
 		success: function( data, status ) {
 			$( "#ajax-loading" ).hide();
 			$( "#ajax-success b").text( data );
@@ -156,6 +156,17 @@ function check_cookie(){
 		user = uuid.v1();
 		$.cookie( 'bcworkshop-collect', user, { path: '/' } );
 	}
+}
+
+function escapeSpecialCharacters(text) {
+  var map = {
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  
+  return text.replace(/[<>"']/g, function(m) { return map[m]; });
 }
 
 init();
