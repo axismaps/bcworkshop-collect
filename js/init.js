@@ -17,7 +17,8 @@ function init_map(){
 	map = L.map( 'map', { 
 		zoomControl: false,
 		minZoom : 10,
-		maxBounds : [ [ 32.5, -96.55 ], [ 33.05, -97.05 ] ]
+		maxBounds : [ [ 32.5, -96.55 ], [ 33.05, -97.05 ] ],
+		keyboard : false
 	}).setView( [ 32.78, -96.8 ], 12 );
 	L.tileLayer( tileAddress ).addTo( map );
 	
