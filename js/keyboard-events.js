@@ -8,13 +8,10 @@ function keyboard_events(){
 			38 : [ 0, -1 * pan ] //down
 		},
 		zoomKeys = {
-			187 : 1,
-			107 : 1,
-			61 : 1,
-			171 : 1,
-			189 : -1,
-			109 : -1,
-			173 : -1
+			187 : 1, //+ key
+			107 : 1, //+ on numeric keypad
+			189 : -1, //- key
+			109 : -1 //- on numeric keypad
 		};
 	
 	$( document ).on({
