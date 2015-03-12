@@ -18,9 +18,6 @@ function keyboard_events(){
 		keydown: function( e ) {
 			var key = e.keyCode;
 			
-			//problem at zoom level 12
-			
-			
 			if ( key in panKeys ) {
 				console.log( map.getCenter() );
 				map.panBy( panKeys[ key ] );
