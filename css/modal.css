@@ -39,7 +39,7 @@
 }
 
 #confidence-label{
-	margin-top: -12px;
+	margin: -12px 0 20px;
 	padding-top: 15px;
 	border-top: 6px solid #999;
 	font-weight: bold;
