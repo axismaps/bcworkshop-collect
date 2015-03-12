@@ -11,6 +11,7 @@
     "leaflet.draw": "~0.2.3",
     "Leaflet.drawTouch": "https://github.com/axismaps/Leaflet.drawTouch.git",
     "underscore": "~1.7.0",
-    "leaflet-omnivore": "~0.3.2"
+    "leaflet-omnivore": "~0.3.2",
+	"fontawesome": "~4.3.0"
   }
 }

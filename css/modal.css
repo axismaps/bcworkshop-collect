@@ -39,7 +39,7 @@
 }
 
 #confidence-label{
-	margin-top: -12px;
+	margin: -12px 0 20px;
 	padding-top: 15px;
 	border-top: 6px solid #999;
 	font-weight: bold;
@@ -80,7 +80,7 @@
 	padding-bottom: 0;
 }
 
-span.big-icon{
+i.big-icon{
 	color: #2db143;
 	font-size: 36px;
 }

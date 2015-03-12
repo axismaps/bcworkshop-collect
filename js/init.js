@@ -21,6 +21,9 @@ function init_map(){
 	}).setView( [ 32.78, -96.8 ], 12 );
 	L.tileLayer( tileAddress ).addTo( map );
 	
+	//sets the focus so keyboard works on first load
+	map.getContainer().focus();
+	
 	//Setting up sketch
 	drawn = new L.FeatureGroup();
 	map.addLayer( drawn );
@@ -73,11 +76,13 @@ function init_events(){
 	
 	$( "#zoom-out" ).click( function(){
 		map.zoomOut();
+		map.getContainer().focus();
 		if( map.getZoom() - 1 <= map.getMinZoom() ) $( "#zoom-out" ).addClass( "disabled" );
 		$( "#zoom-in" ).removeClass( "disabled" );
 	});
 	$( "#zoom-in" ).click( function() {
 		map.zoomIn();
+		map.getContainer().focus();
 		if( map.getZoom() + 1 >= map.getMaxZoom() ) $( "#zoom-in" ).addClass( "disabled" );
 		$( "#zoom-out" ).removeClass( "disabled" );
 	});
@@ -89,13 +94,10 @@ function init_names() {
 		queryTokenizer : Bloodhound.tokenizers.whitespace,
 		limit : 4,
 		prefetch : {
-			url : endpoint + '/names',
-			filter : function( list ) {
-				return $.map( list, function( neighborhood ){ return { name : neighborhood }; });
-    			}
+			url : endpoint + '/names'
 		}
 	});
-	
+
 	names.initialize();
 	
 	$( '#name-input' ).typeahead(null, {

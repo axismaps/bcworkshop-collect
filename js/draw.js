@@ -85,7 +85,7 @@ function finish_draw( e ) {
 
 function add_drawn() {
 	var layer = copy_layer( holding ).addTo( drawn ),
-		$item = $( '<li class="list-group-item"><span class="glyphicon glyphicon-trash delete"></span><span class="swatch" style="background-color:' + $( "#color" ).val() + '"></span>' + $( "#name-input" ).val() + '</li>' );
+		$item = $( '<li class="list-group-item"><i class="fa fa-trash-o delete"></i><span class="swatch" style="background-color:' + $( "#color" ).val() + '"></span>' + $( "#name-input" ).val() + '</li>' );
 	
 	$item
 		.data( { layer : layer } )
