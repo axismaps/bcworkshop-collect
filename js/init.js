@@ -94,13 +94,10 @@ function init_names() {
 		queryTokenizer : Bloodhound.tokenizers.whitespace,
 		limit : 4,
 		prefetch : {
-			url : endpoint + '/names',
-			filter : function( list ) {
-				return $.map( list, function( neighborhood ){ return { name : neighborhood }; });
-    			}
+			url : endpoint + '/names'
 		}
 	});
-	
+
 	names.initialize();
 	
 	$( '#name-input' ).typeahead(null, {
