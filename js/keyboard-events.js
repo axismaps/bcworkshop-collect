@@ -19,12 +19,14 @@ function keyboard_events(){
 			var key = e.keyCode;
 			
 			if ( key in panKeys ) {
-				console.log( map.getCenter() );
 				map.panBy( panKeys[ key ] );
 				
 				if ( map.options.maxBounds ) {
 					map.panInsideBounds( map.options.maxBounds );
 				}
+				
+				map.panBy( [1, 1] );
+				map.panBy( [-1, -1] );
 			}
 			else if ( key in zoomKeys ) {
 				map.setZoom( map.getZoom() + zoomKeys[ key ] );
