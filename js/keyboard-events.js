@@ -19,11 +19,11 @@ function keyboard_events(){
 			var key = e.keyCode;
 			
 			//problem at zoom level 12
-			console.log( map.getCenter() );
+			
 			
 			if ( key in panKeys ) {
+				console.log( map.getCenter() );
 				map.panBy( panKeys[ key ] );
-				map._onResize();
 				
 				if ( map.options.maxBounds ) {
 					map.panInsideBounds( map.options.maxBounds );
