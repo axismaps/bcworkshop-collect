@@ -17,8 +17,13 @@ function keyboard_events(){
 	$( document ).on({
 		keydown: function( e ) {
 			var key = e.keyCode;
+			
+			//problem at zoom level 12
+			console.log( map.getCenter() );
+			
 			if ( key in panKeys ) {
 				map.panBy( panKeys[ key ] );
+				map._onResize();
 				
 				if ( map.options.maxBounds ) {
 					map.panInsideBounds( map.options.maxBounds );
