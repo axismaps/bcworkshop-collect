@@ -24,6 +24,9 @@ function init_map(){
 	//sets the focus so keyboard works on first load
 	map.getContainer().focus();
 	
+	//fire intro screen
+	$( '#about' ).modal( 'show' );
+	
 	//Setting up sketch
 	drawn = new L.FeatureGroup();
 	map.addLayer( drawn );
