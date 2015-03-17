@@ -131,3 +131,8 @@ header, #map{
 	height: 30px;
 	margin-right: 20px;
 }
+
+#about iframe {
+	margin: 0 auto;
+	display: block;
+}
