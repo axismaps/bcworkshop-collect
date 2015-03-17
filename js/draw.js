@@ -7,6 +7,7 @@ function draw_polygon(){
 	clear_sketch();	
 	$( "#polygon-controls" ).css( "display", "inline-block" );
 	$( "#poly" ).addClass( "active" );
+	$( "#tool_used" ).val( "polygon" );
 	
 	var options = { 
 		allowIntersection : false,
@@ -25,6 +26,7 @@ function draw_polygon(){
 function draw_circle(){
 	clear_sketch();
 	$( "#circle" ).addClass( "active" );
+	$( "#tool_used" ).val( "circle" );
 	
 	sketch = new L.Draw.Circle( map, { 
 		showRadius : false,
