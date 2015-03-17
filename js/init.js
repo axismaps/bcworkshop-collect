@@ -17,7 +17,8 @@ function init_map(){
 	map = L.map( 'map', { 
 		zoomControl: false,
 		minZoom : 10,
-		maxBounds : [ [ 32.5, -96.55 ], [ 33.05, -97.05 ] ]
+		maxBounds : [ [ 32.5, -96.55 ], [ 33.05, -97.05 ] ],
+		keyboard : false
 	}).setView( [ 32.78, -96.8 ], 12 );
 	L.tileLayer( tileAddress ).addTo( map );
 	
@@ -86,6 +87,7 @@ function init_events(){
 		if( map.getZoom() + 1 >= map.getMaxZoom() ) $( "#zoom-in" ).addClass( "disabled" );
 		$( "#zoom-out" ).removeClass( "disabled" );
 	});
+	keyboard_events();
 }
 
 function init_names() {
