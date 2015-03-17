@@ -37,10 +37,6 @@ a:hover{
 	border: none;
 }
 
-.modal-dialog{
-	margin-top: 200px;
-}
-
 .form-control{
 	background-color: #eee;
 	-webkit-border-radius: 2px;
