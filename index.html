@@ -83,6 +83,15 @@
 						<form>
 							<div class="form-group">
 								<input id="name-input" type="text" class="form-control input-lg" name="name" placeholder="Neighborhood name..." required>
+								<span>Type of Neighborhood: </span>
+								<div class="btn-group" data-toggle="buttons">
+									<label class="btn btn-primary active">
+										<input type="radio" name="n-type" autocomplete="off" checked>Neighborhood
+									</label>
+									<label class="btn btn-primary">
+										<input type="radio" name="n-type" autocomplete="off">Super-Neighborhood
+									</label>
+								</div>
 								<div>
 									<h5>How confident are you in your choice?</h5>
 									<input type="radio" name="confidence" value="1" required>
