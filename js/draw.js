@@ -53,8 +53,10 @@ function clear_sketch() {
 }
 
 function delete_neighborhood( $div ) {
+	console.log( endpoint + '/delete/' + user + '/' + encodeURIComponent( deleting.children( "#delete-name" ).text() ) + '/' + encodeURIComponent( deleting.children( "div" ).text() ) );
+	
 	$.ajax({
-		url : endpoint + '/delete/' + user + '/' + encodeURIComponent( deleting.text() ),
+		url : endpoint + '/delete/' + user + '/' + encodeURIComponent( deleting.children( "#delete-name" ).text() ) + '/' + encodeURIComponent( deleting.children( "div" ).text() ),
 		success : function( data ) {
 			console.log( data );
 		}
@@ -87,7 +89,7 @@ function finish_draw( e ) {
 
 function add_drawn() {
 	var layer = copy_layer( holding ).addTo( drawn ),
-		$item = $( '<li class="list-group-item"><i class="fa fa-trash-o delete"></i><span class="swatch" style="background-color:' + $( "#color" ).val() + '"></span>' + $( "#name-input" ).val() + '</li>' );
+		$item = $( '<li class="list-group-item"><div style="display:none">' + $( "#type-radios input:checked" ).val() + '</div><i class="fa fa-trash-o delete"></i><span class="swatch" style="background-color:' + $( "#color" ).val() + '"></span><span id="delete-name">' + $( "#name-input" ).val() + '</span></li>' );
 	
 	$item
 		.data( { layer : layer } )

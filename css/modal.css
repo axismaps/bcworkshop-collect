@@ -27,14 +27,18 @@
 	margin-bottom: 15px;
 }
 
-#name input[ type="radio" ]{
+#name #type-radios input[ type="radio" ] {
+	margin: 0 10px;
+}
+
+#name #confidence-radios input[ type="radio" ]{
 	margin-right: 123px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-#name input[ type="radio" ]:last-child{
+#name #confidence-radios input[ type="radio" ]:last-child{
 	margin-right: 0;
 }
 

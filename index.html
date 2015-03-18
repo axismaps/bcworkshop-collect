@@ -83,7 +83,12 @@
 						<form>
 							<div class="form-group">
 								<input id="name-input" type="text" class="form-control input-lg" name="name" placeholder="Neighborhood name..." required>
-								<div>
+								<div class="well" id="type-radios">
+									<span>Type of Neighborhood: </span>
+									<input type="radio" name="neighborhood" value="neighborhood" checked>Neighborhood
+									<input type="radio" name="neighborhood" value="superneighborhood">Super-Neighborhood
+									</div>
+								<div id="confidence-radios">
 									<h5>How confident are you in your choice?</h5>
 									<input type="radio" name="confidence" value="1" required>
 									<input type="radio" name="confidence" value="2" required>
