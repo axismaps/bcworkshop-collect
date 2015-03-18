@@ -53,8 +53,6 @@ function clear_sketch() {
 }
 
 function delete_neighborhood( $div ) {
-	console.log( endpoint + '/delete/' + user + '/' + encodeURIComponent( deleting.children( "#delete-name" ).text() ) + '/' + encodeURIComponent( deleting.children( "div" ).text() ) );
-	
 	$.ajax({
 		url : endpoint + '/delete/' + user + '/' + encodeURIComponent( deleting.children( "#delete-name" ).text() ) + '/' + encodeURIComponent( deleting.children( "div" ).text() ),
 		success : function( data ) {
