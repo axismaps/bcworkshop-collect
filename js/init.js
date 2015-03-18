@@ -116,12 +116,13 @@ function send_neighborhood() {
 	var required = $( '[required]' );
 	var error = false;
 	
-	for ( var i = 0; i <= ( required.length - 1 ); i++ ){
-		if( required[i].value == '' ) {
-			required[i].style.backgroundColor = 'red';
+	$.map( required, function(v, i) {
+		if( v.value == '' ) {
+			v.addClass( 'has-error' );
 			error = true;
+			console.log( 'added error' );
 		}
-	}
+	});
 	
 	if( error ) return false;
 	else {
