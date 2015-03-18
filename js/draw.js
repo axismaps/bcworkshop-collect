@@ -89,7 +89,7 @@ function finish_draw( e ) {
 
 function add_drawn() {
 	var layer = copy_layer( holding ).addTo( drawn ),
-		$item = $( '<li class="list-group-item"><div style="display:none">' + $( "#type-radios input:checked" ).val() + '</div><i class="fa fa-trash-o delete"></i><span class="swatch" style="background-color:' + $( "#color" ).val() + '"></span><span id="delete-name">' + $( "#name-input" ).val() + '</span></li>' );
+		$item = $( '<li class="list-group-item"><div style="display:none">' + $( "#type-radios input:checked" ).val() + '</div><i class="fa fa-trash-o delete"></i><span class="swatch" style="background-color:' + $( "#color" ).val() + '"></span><span id="delete-name">' + escapeHTMLTags( $( "#name-input" ).val() ) + '</span></li>' );
 	
 	$item
 		.data( { layer : layer } )
@@ -133,4 +133,12 @@ function getColor() {
 	$( "#color" ).val( c );
 	
 	return c;
+}
+function escapeHTMLTags(text) {
+	var map = {
+		'<': '&lt;',
+		'>': '&gt;'
+	};
+  
+	return text.replace(/[<>]/g, function(m) { return map[m]; });
 }
