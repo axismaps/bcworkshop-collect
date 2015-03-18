@@ -33,6 +33,10 @@ a:hover{
 	background-color: rgba(0,0,0,0.9) !important;
 }
 
+.btn-group {
+	box-shadow: none !important;
+}
+
 .modal-header, .modal-footer{
 	border: none;
 }
