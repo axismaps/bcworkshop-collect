@@ -118,13 +118,14 @@ function send_neighborhood() {
 	
 	$.map( required, function(v, i) {
 		if( v.value == '' ) {
-			v.addClass( 'has-error' );
 			error = true;
-			console.log( 'added error' );
 		}
 	});
 	
-	if( error ) return false;
+	if( error ) {
+		$( 'form .form-group' ).addClass( 'has-error' );
+		return false;
+	}
 	else {
 		$( this ).hide();
 		$( "#name .modal-header" ).hide();
