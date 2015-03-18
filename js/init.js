@@ -113,33 +113,46 @@ function init_names() {
 }
 
 function send_neighborhood() {
-	$( this ).hide();
-	$( "#name .modal-header" ).hide();
+	var required = $( '[required]' );
+	var error = false;
 	
-	$( "#ajax-loading b" ).text( $( "#name-input" ).val() );
-	$( "#ajax-loading" ).show();
-	
-	var uuid = $( 'form #uuid').val(),
-	neighborhood_name = $( 'form #name-input').val();
-	
-	$.ajax({
-		type : "POST",
-		url : endpoint + '/add',
-		data : $( this ).serialize(),
-		success: function( data, status ) {
-			$( "#ajax-loading" ).hide();
-			$( "#ajax-success b").text( data );
-			
-			$( "#email-info" ).attr( "href", "mailto:bc@bcworkshop.org?subject=More Information about Neighborhood: " + neighborhood_name + " [" + uuid + "]" );
-			
-			$( "#ajax-success" ).show();
-			
-			clear_sketch();
-			add_drawn();
+	for ( var i = 0; i <= ( required.length - 1 ); i++ ){
+		if( required[i].value == '' ) {
+			required[i].style.backgroundColor = 'red';
+			error = true;
 		}
-    });
+	}
+	
+	if( error ) return false;
+	else {
+		$( this ).hide();
+		$( "#name .modal-header" ).hide();
+		
+		$( "#ajax-loading b" ).text( $( "#name-input" ).val() );
+		$( "#ajax-loading" ).show();
+		
+		var uuid = $( 'form #uuid').val(),
+		neighborhood_name = $( 'form #name-input').val();
+		
+		$.ajax({
+			type : "POST",
+			url : endpoint + '/add',
+			data : $( this ).serialize(),
+			success: function( data, status ) {
+				$( "#ajax-loading" ).hide();
+				$( "#ajax-success b").text( data );
+				
+				$( "#email-info" ).attr( "href", "mailto:bc@bcworkshop.org?subject=More Information about Neighborhood: " + neighborhood_name + " [" + uuid + "]" );
+				
+				$( "#ajax-success" ).show();
+				
+				clear_sketch();
+				add_drawn();
+			}
+		});
 
-    return false;
+		return false;
+	}
 }
 
 function show_confirm( callback ) {
