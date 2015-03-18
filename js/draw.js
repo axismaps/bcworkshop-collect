@@ -63,6 +63,8 @@ function delete_neighborhood( $div ) {
 	drawn.removeLayer( deleting.data().layer );
 	deleting.remove();
 	$( "#confirm" ).modal( 'hide' );
+	
+	$( "#drawn" ).css( "margin-bottom", ( $( "#drawn" ).children().length - 1 ) * -42 );
 }
 
 function finish_draw( e ) {	
