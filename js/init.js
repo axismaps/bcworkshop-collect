@@ -65,7 +65,6 @@ function init_events(){
 		$( "#name form, #name .modal-header" ).show();
 		$( "#name form :text, #name form textarea" ).val( '' );
 		$( "#name form :radio" ).removeAttr( "checked" );
-		$( 'input' ).parent().removeClass( 'has-error' );
 		$( "#ajax-success" ).hide();
 	});
 	$( "#switch" ).click( function() {
