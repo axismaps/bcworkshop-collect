@@ -40,6 +40,9 @@ function init_events(){
 	$( "#draw-call, #draw-another" ).click( function(){
 		$( "#draw-call" ).hide();
 		$( "#drawing" ).css( "display", "inline-block" );
+		if( is_touch_device() ) {
+			$( "#circle" ).hide();
+		}
 		draw_polygon();
 	});
 	
@@ -183,5 +186,10 @@ function check_cookie(){
 		$.cookie( 'bcworkshop-collect', user, { path: '/' } );
 	}
 }
+
+function is_touch_device() {
+  return !!('ontouchstart' in window) // works on most browsers 
+      || !!('onmsgesturechange' in window); // works on ie10
+}; 
 
 init();
