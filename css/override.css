@@ -4,7 +4,7 @@ a:hover{
 
 .btn{
 	line-height: 26px;
-	border: none;
+	border: 1px solid #999;
 }
 
 .btn-group .btn:not( :first-child ){
