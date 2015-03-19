@@ -116,31 +116,23 @@ function init_names() {
 function send_neighborhood() {
 	//Form validation for iOS
 	if( $( '#name-input' ).val() == '' ) {
-		$( '#name-input' ).parent().addClass( 'has-error' );
+		alert( 'Please type a neighborhood name' );
 		return false;
-	} else {
-		$( '#name-input' ).parent().removeClass( 'has-error' );
 	}
 	
 	if( $( 'input[name=neighborhood]:checked' ).length == 0 ) {
-		$( '#type-radios' ).addClass( 'has-error' );
+		alert( 'Please choose a neighborhood type' );
 		return false;
-	} else {
-		$( '#type-radios' ).removeClass( 'has-error' );
 	}
 	
 	if( $( 'input[name=confidence]:checked' ).length == 0 ) {
-		$( '#confidence-radios' ).addClass( 'has-error' );
+		alert( 'Please choose how confident you are' );
 		return false;
-	} else {
-		$( '#confidence-radios' ).removeClass( 'has-error' );
 	}
 	
 	if( $( '#comments' ).val() == '' ) {
-		$( '#comments' ).parent().addClass( 'has-error' );
+		alert( 'Please add a comment' );
 		return false;
-	} else {
-		$( '#comments' ).parent().removeClass( 'has-error' );
 	}
 	
 	$( this ).hide();
