@@ -113,48 +113,50 @@ function init_names() {
 }
 
 function send_neighborhood() {
-	var required = $( '[required]' );
-	var error = false;
+	if( $( '#name-input' ).val() == '' ) {
+		$( '#name-input' ).parent().addClass( 'has-error' );
+		return false;
+	}
+	if( $( 'input[name=neighborhood]:checked' ).length == 0 ) {
+		$( 'input[name=neighborhood]' ).parent().addClass( 'has-error' );
+		return false;
+	}
+	if( $( 'input[name=confidence]:checked' ).length == 0 ) {
+		$( 'input[name=confidence]' ).parent().addClass( 'has-error' );
+		return false;
+	}
+	if( $( '#comments' ).val() == '' ) {
+		$( '#comments' ).parent().addClass( 'has-error' );
+		return false;
+	}
 	
-	$.map( required, function(v, i) {
-		if( v.value == '' ) {
-			error = true;
+	$( this ).hide();
+	$( "#name .modal-header" ).hide();
+	
+	$( "#ajax-loading b" ).text( $( "#name-input" ).val() );
+	$( "#ajax-loading" ).show();
+	
+	var uuid = $( 'form #uuid').val(),
+	neighborhood_name = $( 'form #name-input').val();
+	
+	$.ajax({
+		type : "POST",
+		url : endpoint + '/add',
+		data : $( this ).serialize(),
+		success: function( data, status ) {
+			$( "#ajax-loading" ).hide();
+			$( "#ajax-success b").text( data );
+			
+			$( "#email-info" ).attr( "href", "mailto:bc@bcworkshop.org?subject=More Information about Neighborhood: " + neighborhood_name + " [" + uuid + "]" );
+			
+			$( "#ajax-success" ).show();
+			
+			clear_sketch();
+			add_drawn();
 		}
 	});
-	
-	if( error ) {
-		$( 'form .form-group' ).addClass( 'has-error' );
-		return false;
-	}
-	else {
-		$( this ).hide();
-		$( "#name .modal-header" ).hide();
-		
-		$( "#ajax-loading b" ).text( $( "#name-input" ).val() );
-		$( "#ajax-loading" ).show();
-		
-		var uuid = $( 'form #uuid').val(),
-		neighborhood_name = $( 'form #name-input').val();
-		
-		$.ajax({
-			type : "POST",
-			url : endpoint + '/add',
-			data : $( this ).serialize(),
-			success: function( data, status ) {
-				$( "#ajax-loading" ).hide();
-				$( "#ajax-success b").text( data );
-				
-				$( "#email-info" ).attr( "href", "mailto:bc@bcworkshop.org?subject=More Information about Neighborhood: " + neighborhood_name + " [" + uuid + "]" );
-				
-				$( "#ajax-success" ).show();
-				
-				clear_sketch();
-				add_drawn();
-			}
-		});
 
-		return false;
-	}
+	return false;
 }
 
 function show_confirm( callback ) {
