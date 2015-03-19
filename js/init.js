@@ -114,21 +114,33 @@ function init_names() {
 }
 
 function send_neighborhood() {
+	//Form validation for iOS
 	if( $( '#name-input' ).val() == '' ) {
 		$( '#name-input' ).parent().addClass( 'has-error' );
 		return false;
+	} else {
+		$( '#name-input' ).parent().removeClass( 'has-error' );
 	}
+	
 	if( $( 'input[name=neighborhood]:checked' ).length == 0 ) {
-		$( 'input[name=neighborhood]' ).parent().addClass( 'has-error' );
+		$( '#type-radios' ).addClass( 'has-error' );
 		return false;
+	} else {
+		$( '#type-radios' ).removeClass( 'has-error' );
 	}
+	
 	if( $( 'input[name=confidence]:checked' ).length == 0 ) {
-		$( 'input[name=confidence]' ).parent().addClass( 'has-error' );
+		$( '#confidence-radios' ).addClass( 'has-error' );
 		return false;
+	} else {
+		$( '#confidence-radios' ).removeClass( 'has-error' );
 	}
+	
 	if( $( '#comments' ).val() == '' ) {
 		$( '#comments' ).parent().addClass( 'has-error' );
 		return false;
+	} else {
+		$( '#comments' ).parent().removeClass( 'has-error' );
 	}
 	
 	$( this ).hide();
