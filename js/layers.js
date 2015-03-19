@@ -50,8 +50,12 @@ function init_layers( button ) {
 					};
 		    	}
 			});
+			
+			$( "#dropdown-toggle" ).css( "pointer-events", "none" );
+			
 			omnivore.topojson( endpoint + "/topojson/" + $( this ).val(), null, layerStyle ).addTo( overlays ).on( 'ready', function() {
 				$( "#dropdown-toggle" ).children().toggle();
+				$( "#dropdown-toggle" ).css( "pointer-events", "auto" );
 			}); 
 		}
 		map.getContainer().focus();
