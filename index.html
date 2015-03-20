@@ -82,26 +82,32 @@
 					<div class="modal-body">
 						<form>
 							<div class="form-group">
-								<input id="name-input" type="text" class="form-control input-lg" name="name" placeholder="Neighborhood name..." required>
-								<div class="well control-label" id="type-radios">
-									<span>Type of Neighborhood: </span>
-									<input type="radio" name="neighborhood" value="neighborhood" required>Neighborhood
-									<input type="radio" name="neighborhood" value="superneighborhood" required>Super-Neighborhood
+								<div>
+									<input id="name-input" type="text" class="form-control input-lg" name="name" placeholder="Neighborhood name...">
 								</div>
-								<div class="control-label" id="confidence-radios">
+								<div class="well" id="type-radios">
+									<span>Type of Neighborhood: </span>
+									<input type="radio" name="neighborhood" value="neighborhood">
+									<label class="control-label">Neighborhood</label>
+									<input type="radio" name="neighborhood" value="superneighborhood">
+									<label class="control-label">Super-Neighborhood</label>
+								</div>
+								<div id="confidence-radios">
 									<h5>How confident are you in your choice?</h5>
-									<input type="radio" name="confidence" value="1" required>
-									<input type="radio" name="confidence" value="2" required>
-									<input type="radio" name="confidence" value="3" required>
-									<input type="radio" name="confidence" value="4" required>
-									<input type="radio" name="confidence" value="5" required>
+									<input class="control-label" type="radio" name="confidence" value="1" >
+									<input class="control-label" type="radio" name="confidence" value="2" >
+									<input class="control-label" type="radio" name="confidence" value="3" >
+									<input class="control-label" type="radio" name="confidence" value="4" >
+									<input class="control-label" type="radio" name="confidence" value="5" >
 								</div>
 								<div id="confidence-label">
-									<span class="left">Not<br />Confident</span>
-									<span class="right">Very<br />Confident</span>
-									<span>Somewhat<br />Confident</span>
+									<label class="left control-label">Not<br />Confident</label>
+									<label class="right control-label">Very<br />Confident</label>
+									<label class="control-label">Somewhat<br />Confident</label>
 								</div>
-								<textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Tell us why you chose these boundaries..." required></textarea>
+								<div>
+									<textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Tell us why you chose these boundaries..." ></textarea>
+								</div>
 								<input type="hidden" id="uuid" name="uuid">
 								<input type="hidden" id="geojson" name="geojson">
 								<input type="hidden" id="color" name="geojson">

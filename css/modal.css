@@ -50,7 +50,7 @@
 	font-weight: bold;
 }
 
-#confidence-label span{
+#confidence-label label{
 	display: block;
 	text-align: center;
 }
