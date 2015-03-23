@@ -57,3 +57,8 @@ a:hover{
 .list-group-item:last-child{
 	border-radius: 0;
 }
+
+#ajax-success .modal-title{
+	text-align: center;
+	margin: -30px 0 30px 0;
+}
