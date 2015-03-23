@@ -41,6 +41,10 @@ a:hover{
 	border: none;
 }
 
+#about .modal-header, #about .modal-footer{
+	border: 1px solid #e5e5e5;
+}
+
 .form-control{
 	background-color: #eee;
 	-webkit-border-radius: 2px;
