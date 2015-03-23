@@ -7,11 +7,6 @@ a:hover{
 	border: 1px solid #999;
 }
 
-.btn-group .btn:not( :first-child ){
-	border-left: 1px solid #ccc;
-	margin-left: 0;
-}
-
 #drawing .btn.disabled {
 	opacity: 1;
 }
@@ -32,6 +27,10 @@ a:hover{
 
 .btn-info:hover, .btn-info:focus{
 	background-color: rgba(0,0,0,0.9) !important;
+}
+
+.btn-default.disabled{
+	border: 1px solid #999;
 }
 
 .btn-group {
