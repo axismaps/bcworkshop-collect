@@ -9,7 +9,9 @@
     "gulp-uglify": "^1.1.0",
     "gulp-usemin": "^0.3.11"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "del": "^1.1.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
