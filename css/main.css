@@ -4,6 +4,7 @@ body{
 
 header{
 	height: 140px;
+	border-bottom: 1px solid #999;
 }
 
 header a{
