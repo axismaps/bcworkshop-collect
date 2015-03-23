@@ -27,7 +27,7 @@ a:hover{
 
 .btn-info, .btn-info.disabled{
 	background-color: rgba(0,0,0,0.7);
-	border-color: white;
+	border: none;
 }
 
 .btn-info:hover, .btn-info:focus{
