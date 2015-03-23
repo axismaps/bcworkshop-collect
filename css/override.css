@@ -4,7 +4,7 @@ a:hover{
 
 .btn{
 	line-height: 26px;
-	border: none;
+	border: 1px solid #999;
 }
 
 .btn-group .btn:not( :first-child ){
@@ -31,6 +31,10 @@ a:hover{
 
 .btn-info:hover, .btn-info:focus{
 	background-color: rgba(0,0,0,0.9) !important;
+}
+
+.btn-group {
+	box-shadow: none !important;
 }
 
 .modal-header, .modal-footer{

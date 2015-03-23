@@ -40,6 +40,9 @@ function init_events(){
 	$( "#draw-call, #draw-another" ).click( function(){
 		$( "#draw-call" ).hide();
 		$( "#drawing" ).css( "display", "inline-block" );
+		if( is_touch_device() ) {
+			$( "#circle" ).hide();
+		}
 		draw_polygon();
 	});
 	
@@ -113,6 +116,29 @@ function init_names() {
 }
 
 function send_neighborhood() {
+	$( '.has-error' ).removeClass( 'has-error' );
+	
+	//Form validation for iOS
+	if( $( '#name-input' ).val() == '' ) {
+		$( '#name-input' ).parent().addClass( 'has-error' );
+		return false;
+	}
+	
+	if( $( 'input[name=neighborhood]:checked' ).length == 0 ) {
+		$( 'input[name=neighborhood]' ).parent().addClass( 'has-error' );
+		return false;
+	}
+	
+	if( $( 'input[name=confidence]:checked' ).length == 0 ) {
+		$( 'input[name=confidence]' ).parent().next().addClass( 'has-error' );
+		return false;
+	}
+	
+	if( $( '#comments' ).val() == '' ) {
+		$( '#comments' ).parent().addClass( 'has-error' );
+		return false;
+	}
+	
 	$( this ).hide();
 	$( "#name .modal-header" ).hide();
 	
@@ -137,9 +163,9 @@ function send_neighborhood() {
 			clear_sketch();
 			add_drawn();
 		}
-    });
+	});
 
-    return false;
+	return false;
 }
 
 function show_confirm( callback ) {
@@ -162,5 +188,10 @@ function check_cookie(){
 		$.cookie( 'bcworkshop-collect', user, { path: '/' } );
 	}
 }
+
+function is_touch_device() {
+  return !!('ontouchstart' in window) // works on most browsers 
+      || !!('onmsgesturechange' in window); // works on ie10
+}; 
 
 init();
