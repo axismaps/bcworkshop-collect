@@ -81,6 +81,12 @@ header, #map{
 	transition: all 250ms ease-in;
 }
 
+#drawn #submitted-neighborhoods-call{
+	color: #000;
+	cursor: pointer;
+	cursor: hand;
+}
+
 #drawn.up{
 	margin-bottom: -1px !important;
 }
