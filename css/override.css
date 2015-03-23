@@ -18,6 +18,7 @@ a:hover{
 
 .btn-primary{
 	background-color: #ee2a25;
+	border: none;
 }
 
 .btn-primary:hover, .btn-primary:focus{
