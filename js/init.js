@@ -70,6 +70,10 @@ function init_events(){
 		$( "#name form :radio" ).removeAttr( "checked" );
 		$( "#ajax-success" ).hide();
 	});
+	
+	$( "#submitted-neighborhoods-call" ).click( function(){
+		$( "#switch" ).click();
+	});
 	$( "#switch" ).click( function() {
 		if( $( "#drawn" ).hasClass( "up" ) ) {
 			$( "#drawn" ).removeClass( "up" );

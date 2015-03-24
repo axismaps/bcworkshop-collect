@@ -70,43 +70,60 @@
 		</div>
 		
 		<ul id="drawn" class="list-group">
-			<li class="list-group-item"><div id="switch"><i class="fa fa-chevron-up up"></i><i class="fa fa-chevron-down down"></i></div>Your submitted neighborhoods</li>
+			<li class="list-group-item"><div id="switch"><i class="fa fa-chevron-up up"></i><i class="fa fa-chevron-down down"></i></div><a id="submitted-neighborhoods-call">Your submitted neighborhoods</a></li>
 		</ul>
 		
 		<div class="modal fade" id="name" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h4 class="modal-title"><i class="fa fa-edit" aria-hidden="true"></i> Name this neighborhood</h4>
+						<h2 class="modal-title">Name this neighborhood</h2>
 					</div>
 					<div class="modal-body">
 						<form>
 							<div class="form-group">
-								<div>
-									<input id="name-input" type="text" class="form-control input-lg" name="name" placeholder="Neighborhood name..." required>
+								<div class="form-elements-line">
+									<div class="form-elements-short">
+										<input id="name-input" type="text" class="form-control input-lg" name="name" placeholder="Neighborhood name..." required>
+									</div>
+									<i class="fa fa-asterisk"></i>
 								</div>
-								<div class="well" id="type-radios">
-									<span>Type of Neighborhood: </span>
-									<input type="radio" name="neighborhood" value="neighborhood" required>
-									<label class="control-label">Neighborhood</label>
-									<input type="radio" name="neighborhood" value="superneighborhood" required>
-									<label class="control-label">Super-Neighborhood</label>
+								
+								<div class="form-elements-line">
+									<div class="well radio-well form-elements-short" id="type-radios">
+										<span>Type of Neighborhood: </span>
+										<input type="radio" name="neighborhood" value="neighborhood" required>
+										<label class="control-label">Neighborhood</label>
+										<input type="radio" name="neighborhood" value="superneighborhood" required>
+										<label class="control-label">Super-Neighborhood</label>
+									</div>
+									<i class="fa fa-asterisk"></i>
 								</div>
-								<div id="confidence-radios">
-									<h5>How confident are you in your choice?</h5>
-									<input class="control-label" type="radio" name="confidence" value="1" required>
-									<input class="control-label" type="radio" name="confidence" value="2" required>
-									<input class="control-label" type="radio" name="confidence" value="3" required>
-									<input class="control-label" type="radio" name="confidence" value="4" required>
-									<input class="control-label" type="radio" name="confidence" value="5" required>
+								
+								<div class="form-elements-line">
+									<div class="well radio-well form-elements-short">
+										<div id="confidence-radios">
+											<h5>How confident are you in your choice?</h5>
+											<input class="control-label" type="radio" name="confidence" value="1" required>
+											<input class="control-label" type="radio" name="confidence" value="2" required>
+											<input class="control-label" type="radio" name="confidence" value="3" required>
+											<input class="control-label" type="radio" name="confidence" value="4" required>
+											<input class="control-label" type="radio" name="confidence" value="5" required>
+										</div>
+										<div id="confidence-label">
+											<label class="left control-label">Not<br />Confident</label>
+											<label class="right control-label">Very<br />Confident</label>
+											<label class="control-label">Somewhat<br />Confident</label>
+										</div>
+									</div>
+									<i class="fa fa-asterisk"></i>
 								</div>
-								<div id="confidence-label">
-									<label class="left control-label">Not<br />Confident</label>
-									<label class="right control-label">Very<br />Confident</label>
-									<label class="control-label">Somewhat<br />Confident</label>
-								</div>
-								<div>
-									<textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Tell us why you chose these boundaries..." required></textarea>
+								
+								<div class="form-elements-line">
+									<div class="form-elements-short">
+										<textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Tell us why you chose these boundaries..." required></textarea>
+									</div>
+									<i class="fa fa-asterisk"></i>
 								</div>
 								<input type="hidden" id="uuid" name="uuid">
 								<input type="hidden" id="geojson" name="geojson">
@@ -122,6 +139,7 @@
 							<p>Submitting your neighborhood boundaries for:<br /><b></b></p>
 						</div>
 						<div id="ajax-success" class="ajax">
+							<h2 class="modal-title">Success!</h2>
 							<p><i class="fa fa-check big-icon"></i></p>
 							<p><b></b> was successfully submitted!<br />Would you like to draw another neighborhood?</p>
 							<hr />
@@ -138,7 +156,7 @@
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h4 class="modal-title"><i class="fa fa-times-circle" aria-hidden="true"></i> Deleting neighborhood</h4>
+						<h2 class="modal-title">Deleting neighborhood</h4>
 					</div>
 					<div class="modal-body">
 						<p>Remove this neighborhood from the map?</p>
@@ -160,9 +178,9 @@
 						<h2 class="modal-title">About this map</h2>
 					</div>
 					<div class="modal-body">
-						<p><b>Definitions:</b></p>
-						<p>Neighborhoods are the space of our everyday lives. They are geographies that host communities of shared interest and identity.</p>
-						<p>Super neighborhood’s are contiguous groupings of neighborhoods or communities that function as an organizing element to help bridge between neighborhood’s and larger municipally designated geographies such as service areas or city council districts.</p>
+						<p>DEFINITIONS</p>
+						<p><b>Neighborhoods</b> are the space of our everyday lives. They are geographies that host communities of shared interest and identity.</p>
+						<p><b>Super neighborhoods</b> are contiguous groupings of neighborhoods or communities that function as an organizing element to help bridge between neighborhoods and larger municipally designated geographies such as service areas or city council districts.</p>
 						<iframe src="https://player.vimeo.com/video/121935691" width="560" height="349" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 					</div>
 					<div class="modal-footer">

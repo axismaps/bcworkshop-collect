@@ -4,6 +4,7 @@ body{
 
 header{
 	height: 140px;
+	border-bottom: 1px solid #999;
 }
 
 header a{
@@ -53,7 +54,6 @@ header, #map{
 #controls .btn-group, #controls > a.btn{
 	margin-top: 10px;
 	border: none;
-	box-shadow: 0 0 4.8px 0.3px rgba(0, 0, 0, 0.25);
 }
 
 .btn-group + .btn-group{
@@ -70,7 +70,7 @@ header, #map{
 
 #drawn{
 	min-width: 300px;
-	margin: 0;
+	margin: -1px;
 	position: fixed;
 	bottom: 0;
 	left: 20px;
@@ -81,8 +81,14 @@ header, #map{
 	transition: all 250ms ease-in;
 }
 
+#drawn #submitted-neighborhoods-call{
+	color: #000;
+	cursor: pointer;
+	cursor: hand;
+}
+
 #drawn.up{
-	margin-bottom: 0 !important;
+	margin-bottom: -1px !important;
 }
 
 #drawn #switch{

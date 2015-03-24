@@ -7,30 +7,30 @@ a:hover{
 	border: 1px solid #999;
 }
 
-.btn-group .btn:not( :first-child ){
-	border-left: 1px solid #ccc;
-	margin-left: 0;
-}
-
 #drawing .btn.disabled {
 	opacity: 1;
 }
 
 .btn-primary{
 	background-color: #ee2a25;
+	border: none;
 }
 
 .btn-primary:hover, .btn-primary:focus{
-	background-color: #df3330;
+	background-color: #ff423f;
 }
 
 .btn-info, .btn-info.disabled{
 	background-color: rgba(0,0,0,0.7);
-	border-color: white;
+	border: none;
 }
 
 .btn-info:hover, .btn-info:focus{
 	background-color: rgba(0,0,0,0.9) !important;
+}
+
+.btn-default.disabled{
+	border: 1px solid #999;
 }
 
 .btn-group {
@@ -41,6 +41,10 @@ a:hover{
 	border: none;
 }
 
+#about .modal-header, #about .modal-footer{
+	border: 1px solid #e5e5e5;
+}
+
 .form-control{
 	background-color: #eee;
 	-webkit-border-radius: 2px;
@@ -49,6 +53,22 @@ a:hover{
 	box-shadow: none;
 }
 
+.list-group-item{
+	border: 1px solid #999;
+}
+
 .list-group-item:last-child{
-	border-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+#ajax-success .modal-title{
+	text-align: center;
+	margin: -30px 0 30px 0;
+}
+
+@media screen and (min-width: 768px){ 
+	.modal-sm {
+		width: 400px;
+	}
 }

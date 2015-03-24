@@ -1,3 +1,12 @@
+.form-elements-line{
+	width: 100%;
+}
+
+.form-elements-short{
+	width: 90%;
+	display: inline-block;
+}
+
 .twitter-typeahead, .tt-dropdown-menu{
 	width: 100%;
 }
@@ -32,7 +41,7 @@
 }
 
 #name #confidence-radios input[ type="radio" ]{
-	margin-right: 118px;
+	margin-right: 99px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -76,6 +85,24 @@
 	color: #333;
 }
 
+#name ::-webkit-input-placeholder{
+	font-size: 16px;
+}
+
+#name ::-moz-placeholder{
+	font-size: 16px;
+}
+
+#name :-ms-input-placeholder{
+	font-size: 16px;
+}
+
+#name .radio-well{
+	border: none;
+	box-shadow: none;
+	background-color: #eee;
+}
+
 #ajax-loading, #ajax-success{
 	display: none;
 	padding: 75px 0;
@@ -88,6 +115,11 @@
 i.big-icon{
 	color: #2db143;
 	font-size: 36px;
+}
+
+i.fa-asterisk{
+	color: #ee2a25;
+	vertical-align: top;
 }
 
 .ajax > p{
