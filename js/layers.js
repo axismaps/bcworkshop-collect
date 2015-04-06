@@ -18,7 +18,7 @@ var overlays;
 		{
 			"table" : "city_limits",
 			"name" : "City Limits",
-			"default" : false
+			"default" : true
 		}
 	];
 
