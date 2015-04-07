@@ -1,5 +1,7 @@
 var map,
 	user,
+	overlays,
+  labels,
 	deleting,
 	endpoint = window.location.origin + ':3000';
 
@@ -7,6 +9,7 @@ function init(){
 	check_cookie();
 	init_map();
 	init_layers( $( ".dropdown-menu" ) );
+	init_drawn();
 	init_events();
 	init_names();
 	resize();
@@ -27,7 +30,60 @@ function init_map(){
 	
 	//fire intro screen
 	$( '#about' ).modal( 'show' );
+}
+
+function init_layers( button ) {
+	//init layer group to store labels
+	labels = L.layerGroup().addTo( map );
 	
+	//init layer group to store overlays
+	overlays = L.layerGroup().addTo( map );
+	
+	//hides the loader icon on first view
+	$( '#dropdown-toggle i' ).toggle();
+	
+	//button should be a jquery object
+	button.append( '<li role="presentation"><label><input type="radio" name="layers" value="" checked>None</label></li>' );
+	_.each( layers, function( layer ) {
+		var $li = $( '<li role="presentation"><label><input type="radio" name="layers" value="' + layer.table + '"' + ( layer.default ? ' checked="true"' : '' ) +'>' + layer.name + '</label></li>' );
+		$li.data( layer );
+		button.append( $li );
+	});
+	
+	button.find( 'input' ).click( function() {
+		overlays.clearLayers();
+		labels.clearLayers();
+		
+		if( $( this ).val() != '' ) {
+			$( "#dropdown-toggle" ).children().toggle();
+			
+			var layerStyle = L.geoJson( null, {
+				style : function( feature ) {
+					return { 
+						color : '#ed2a24',
+						fillOpacity : 0,
+						pointerEvents : 'none'
+					};
+		    	}
+			});
+			
+			$( "#dropdown-toggle" ).css( "pointer-events", "none" );
+			
+			if( $( this ).parents( "li" ).data().labels ) {
+  				  L.tileLayer( $( this ).parents( "li" ).data().labels ).addTo( labels );
+		  }
+			
+			omnivore.topojson( endpoint + "/topojson/" + $( this ).val(), null, layerStyle ).addTo( overlays ).on( 'ready', function() {
+				$( "#dropdown-toggle" ).children().toggle();
+				$( "#dropdown-toggle" ).css( "pointer-events", "auto" );
+			}); 
+		}
+		map.getContainer().focus();
+	});	
+	button.find( 'input:checked' ).trigger( 'click' );
+}
+
+function init_drawn() {	
 	//Setting up sketch
 	drawn = new L.FeatureGroup();
 	map.addLayer( drawn );
