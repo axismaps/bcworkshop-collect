@@ -128,12 +128,14 @@ header, #map{
 	top: 1px;
 }
 
-#about .modal-footer{
+#about .modal-footer,
+#intro-slide .modal-footer{
 	padding-bottom: 20px;
 	text-align: left;
 }
 
-#about .logo{
+#about .logo,
+#intro-slide .logo{
 	height: 30px;
 	margin-right: 20px;
 }
@@ -141,4 +143,8 @@ header, #map{
 #about iframe {
 	margin: 0 auto;
 	display: block;
+}
+
+#intro-slide #next-btn{
+	float: right;
 }
