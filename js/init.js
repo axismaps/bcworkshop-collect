@@ -29,7 +29,11 @@ function init_map(){
 	map.getContainer().focus();
 	
 	//fire intro screen
-	$( '#about' ).modal( 'show' );
+	$( '#intro-slide' ).modal( 'show' );
+	
+	$( '#intro-slide' ).on( 'hide.bs.modal', function() {
+		$( '#about' ).modal( 'show' );
+	});
 }
 
 function init_layers( button ) {
