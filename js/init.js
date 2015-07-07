@@ -32,8 +32,12 @@ function init_map(){
 	$( '#intro-slide' ).modal( 'show' );
 	
 	$( '#intro-slide' ).on( 'hide.bs.modal', function() {
-		$( '#about' ).modal( 'show' );
+		$( '#intro-slide-2' ).modal( 'show' );
 	});
+  
+  $( '#intro-slide-2' ).on( 'hide.bs.modal', function() {
+    $( '#about' ).modal( 'show' );
+  });
 }
 
 function init_layers( button ) {

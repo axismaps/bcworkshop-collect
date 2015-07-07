@@ -129,13 +129,15 @@ header, #map{
 }
 
 #about .modal-footer,
-#intro-slide .modal-footer{
+#intro-slide .modal-footer,
+#intro-slide-2 .modal-footer{
 	padding-bottom: 20px;
 	text-align: left;
 }
 
 #about .logo,
-#intro-slide .logo{
+#intro-slide .logo,
+#intro-slide-2 .logo{
 	height: 30px;
 	margin-right: 20px;
 }
@@ -145,6 +147,7 @@ header, #map{
 	display: block;
 }
 
-#intro-slide #next-btn{
+#intro-slide #next-btn,
+#intro-slide-2 #next-btn{
 	float: right;
 }
