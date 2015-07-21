@@ -36,7 +36,7 @@ function init_map(){
 	});
   
   $( '#intro-slide-2' ).on( 'hide.bs.modal', function() {
-    $( '#about' ).modal( 'show' );
+    $( '#intro-slide-3' ).modal( 'show' );
   });
 }
 

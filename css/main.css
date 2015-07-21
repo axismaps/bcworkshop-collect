@@ -128,26 +128,28 @@ header, #map{
 	top: 1px;
 }
 
-#about .modal-footer,
 #intro-slide .modal-footer,
-#intro-slide-2 .modal-footer{
+#intro-slide-2 .modal-footer,
+#intro-slide-3 .modal-footer{
 	padding-bottom: 20px;
 	text-align: left;
 }
 
-#about .logo,
+
 #intro-slide .logo,
-#intro-slide-2 .logo{
+#intro-slide-2 .logo,
+#intro-slide-3 .logo{
 	height: 30px;
 	margin-right: 20px;
 }
 
-#about iframe {
+#intro-slide-2 iframe {
 	margin: 0 auto;
 	display: block;
 }
 
 #intro-slide #next-btn,
-#intro-slide-2 #next-btn{
+#intro-slide-2 #next-btn,
+#intro-slide-3 #next-btn{
 	float: right;
 }
