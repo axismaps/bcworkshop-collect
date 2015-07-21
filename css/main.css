@@ -153,3 +153,10 @@ header, #map{
 #intro-slide-3 #next-btn{
 	float: right;
 }
+
+.axis{
+  width: 30px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+}
