@@ -22,7 +22,7 @@ function init_map(){
 		minZoom : 10,
 		maxBounds : [ [ 32.5, -96.55 ], [ 33.05, -97.05 ] ],
 		keyboard : false
-	}).setView( [ 32.78, -96.8 ], 12 );
+	}).setView( [ 32.78, -96.8 ], 13 );
 	L.tileLayer( tileAddress ).addTo( map );
 	
 	//sets the focus so keyboard works on first load
